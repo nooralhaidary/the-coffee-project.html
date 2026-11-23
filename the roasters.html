@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Roasters</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/icons/favicon-192.png">
+<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Londrina+Solid:wght@300;400;900&family=DM+Mono:wght@400;500&family=Pacifico&display=swap">
+<link rel="stylesheet" href="transition.css">
+<link rel="stylesheet" href="fun.css">
+<link rel="stylesheet" href="content.css">
+<script src="transition.js" defer></script>
+<script src="fun.js" defer></script>
+<script>
+  if (sessionStorage.getItem("coffeeTransition") === "yes") {
+    document.documentElement.classList.add("coffee-entering");
+  }
+</script>
+<script src="scrollstory.js" defer></script>
+
+<style>
+  html.coffee-entering {
+    background: #402718;
+  }
+
+  html.coffee-entering body {
+    visibility: hidden;
+  }
+</style>
+</head>
+<nav>
+
+  <a href="individual.html">
+    The Coffee Project
+  </a>
+
+  <a href="coffee history.html">
+    The History
+  </a>
+
+  <a href="global statistics.html">
+    The Global Statistics
+  </a>
+
+  <a href="the roasters.html">
+    The Roasters
+  </a>
+
+  <a href="sources.html">
+    Sources
+  </a>
+</nav>
+<style>
+  .drawing-o {
+  display: inline-block;
+  width: 0.62em;
+  height: 1em;
+  background-image: url("title-o.png");
+  background-repeat: no-repeat;
+  background-size: auto 166%;
+  background-position: center 44%;
+  vertical-align: -0.08em;
+}
+
+  @font-face {
+  font-family: "Ombre Nouveau";
+  src: url("./ombre_nouveau/OmbreNouveauDEMO-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+  body {
+    background-color: rgb(242, 230, 179);
+    font-family: "Archivo", sans-serif;
+  }
+nav {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  background-color: #402718;
+  color: #f2e6b3;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 90%;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #70452e;
+}
+
+nav a:active {
+  transform: scale(1.08);
+}
+</style>
+<body>
+<main class="page">
+  <h1 class="page-title">The <span class="word">R<span class="drawing-o" aria-hidden="true"></span>asters</span></h1>
+  <p class="page-intro">Historic cafés and famous coffee brands, from the café around the corner in Madrid to the brands found all over the world.</p>
+
+  <ul class="toc">
+    <li><a href="#madrid">Madrid</a></li>
+    <li><a href="#spain">Spain</a></li>
+    <li><a href="#historic">Historic cafés</a></li>
+    <li><a href="#brands">Famous brands</a></li>
+    <li><a href="#quiz-section">Final test</a></li>
+    <li><a href="sources.html#roasters">Sources</a></li>
+  </ul>
+
+  <!-- ============ 1. MADRID ============ -->
+  <section class="section" id="madrid">
+    <h2>Local: Madrid</h2>
+    <p>Madrid's grand literary cafés have been meeting places for writers, artists and thinkers for well over a century.</p>
+
+    <div class="profile">
+      <figure class="photo photo-right" style="margin-top:0">
+        <img src="images/photos/cafe-comercial.jpg" alt="The front of Café Comercial on the Glorieta de Bilbao, Madrid">
+      </figure>
+      <h3>Café Comercial</h3>
+      <p class="meta">Opened 21 March 1887 · Glorieta de Bilbao 7</p>
+      <p>One of the oldest cafés in Madrid. The poet Antonio Machado was a regular. It closed in 2015 and reopened in 2017.</p>
+    </div>
+
+    <div class="profile">
+      <figure class="photo photo-right" style="margin-top:0">
+        <img src="images/photos/cafe-gijon.jpg" alt="The front of Café Gijón on Paseo de Recoletos, Madrid">
+      </figure>
+      <h3>Café Gijón</h3>
+      <p class="meta">Opened 15 May 1888 · Paseo de Recoletos 21</p>
+      <p>Founded by Gumersindo García, who named it after his home city of Gijón. Its customers have included Benito Pérez Galdós, Santiago Ramón y Cajal, Ramón del Valle-Inclán, Federico García Lorca, Salvador Dalí and Luis Buñuel. It gives its name to the Premio Café Gijón literary prize.</p>
+      <p class="note"><strong>Sources differ</strong> Madrid's official tourism site names the founder Gumersindo García; some other sources call him Gumersindo Gómez.</p>
+    </div>
+    <p class="cite">Evidence: <a href="sources.html#roasters-s1">[1]</a> <a href="sources.html#roasters-s2">[2]</a> <a href="sources.html#roasters-s16">[16]</a></p>
+  </section>
+
+  <!-- ============ 2. SPAIN ============ -->
+  <section class="section" id="spain">
+    <h2>National: Spain</h2>
+    <div class="gallery">
+      <figure><img src="images/photos/els-quatre-gats.jpg" alt="Entrance of Els Quatre Gats, Barcelona"><figcaption>Els Quatre Gats, Barcelona</figcaption></figure>
+      <figure><img src="images/photos/cafe-iruna.jpg" alt="The grand interior of Café Iruña, Pamplona"><figcaption>Café Iruña, Pamplona</figcaption></figure>
+      <figure><img src="images/photos/cafe-novelty.jpg" alt="Café Novelty on the Plaza Mayor, Salamanca"><figcaption>Café Novelty, Salamanca</figcaption></figure>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Café</th><th>City</th><th>Opened</th><th>Known for</th></tr></thead>
+        <tbody>
+          <tr><td>Els Quatre Gats</td><td>Barcelona</td><td>1897</td><td>A meeting place for modernist artists. A young Picasso held his first solo exhibition here in 1900. The original café closed in 1903 and reopened in 1989.</td></tr>
+          <tr><td>Café Iruña</td><td>Pamplona</td><td>1888</td><td>The first place in Pamplona to have electric light. Ernest Hemingway was a regular, and the café has a Hemingway corner.</td></tr>
+          <tr><td>Café Novelty</td><td>Salamanca</td><td>1905</td><td>On the Plaza Mayor; considered the oldest café in Salamanca.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cite">Evidence: <a href="sources.html#roasters-s2">[2]</a> <a href="sources.html#roasters-s3">[3]</a> <a href="sources.html#roasters-s4">[4]</a> <a href="sources.html#roasters-s5">[5]</a></p>
+  </section>
+
+  <!-- ============ 3. HISTORIC CAFÉS ============ -->
+  <section class="section" id="historic">
+    <h2>International: historic cafés</h2>
+    <div class="gallery">
+      <figure><img src="images/photos/queens-lane.jpg" alt="Queen's Lane Coffee House, Oxford"><figcaption>Queen's Lane, Oxford</figcaption></figure>
+      <figure><img src="images/photos/cafe-procope.jpg" alt="The front of Café Procope, Paris"><figcaption>Café Procope, Paris</figcaption></figure>
+      <figure><img src="images/photos/caffe-florian.jpg" alt="The decorated interior of Caffè Florian, Venice"><figcaption>Caffè Florian, Venice</figcaption></figure>
+      <figure><img src="images/photos/cafe-greco-painting.jpg" alt="1856 painting of artists gathered in the Caffè Greco, Rome"><figcaption>Artists in the Caffè Greco, Rome (painting, 1856)</figcaption></figure>
+      <figure><img src="images/photos/cafe-central.jpg" alt="Palais Ferstel in Vienna, home of Café Central"><figcaption>Palais Ferstel, home of Café Central, Vienna</figcaption></figure>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Café</th><th>City</th><th>Opened</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Queen's Lane Coffee House</td><td>Oxford</td><td>1654</td><td>Founded by Cirques Jobson. Claims to be the oldest coffee house in Europe that is still serving (at its current address since 1970).</td></tr>
+          <tr><td>Café Procope</td><td>Paris</td><td>1686</td><td>Founded by the Sicilian Francesco Procopio dei Coltelli; often called the oldest café in Paris.</td></tr>
+          <tr><td>Caffè Florian</td><td>Venice</td><td>1720</td><td>On Piazza San Marco. First called "Alla Venezia Trionfante", and reportedly one of the few cafés of its time to welcome women.</td></tr>
+          <tr><td>Antico Caffè Greco</td><td>Rome</td><td>1760</td><td>On Via dei Condotti, near the Spanish Steps; described as the oldest café in Rome. In 2025 a rent dispute put its future at risk.</td></tr>
+          <tr><td>Café Central</td><td>Vienna</td><td>1876</td><td>A classic Viennese coffeehouse; Sigmund Freud and Leon Trotsky were among its customers.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><strong>Good to know</strong> Many cafés claim to be "the oldest". Because these claims are often disputed, it is safest to call them "among the oldest".</p>
+    <p class="cite">Evidence: <a href="sources.html#roasters-s6">[6]</a> <a href="sources.html#roasters-s7">[7]</a> <a href="sources.html#roasters-s8">[8]</a> <a href="sources.html#roasters-s9">[9]</a> <a href="sources.html#roasters-s17">[17]</a> <a href="sources.html#roasters-s18">[18]</a> <a href="sources.html#roasters-s19">[19]</a></p>
+  </section>
+
+  <!-- ============ 4. BRANDS ============ -->
+  <section class="section" id="brands">
+    <h2>International: famous brands</h2>
+
+    <div class="profile">
+      <h3 class="brand-head"><img class="brand-logo" src="images/photos/logo-starbucks.png" alt=""><span class="brand-name">Starbucks</span></h3>
+      <p class="meta">Seattle, USA · founded 1971</p>
+      <p>Opened on 30 March 1971 near Pike Place Market by three friends: Jerry Baldwin (an English teacher), Zev Siegl (a history teacher) and Gordon Bowker (a writer). At first it sold whole coffee beans, tea and spices, not drinks. The founders learned to roast from Alfred Peet, of Peet's Coffee, and named the company after the first mate in <em>Moby-Dick</em>.</p>
+      <p>Howard Schultz joined in 1982 and, inspired by Italian espresso bars, pushed the company to serve drinks. In 1987 he led a group of investors that bought the company.</p>
+      <p class="cite">Evidence: <a href="sources.html#roasters-s10">[10]</a> <a href="sources.html#roasters-s20">[20]</a> <a href="sources.html#roasters-s21">[21]</a></p>
+    </div>
+
+    <div class="profile">
+      <h3 class="brand-head"><img class="brand-logo" src="images/photos/logo-costa.png" alt=""><span class="brand-name">Costa Coffee</span></h3>
+      <p class="meta">London, UK · founded 1971</p>
+      <p>Founded by the Italian brothers Bruno and Sergio Costa as a roastery supplying caterers and Italian coffee shops. According to Costa's own history, its first coffee shop opened in 1981 on Vauxhall Bridge Road. The company was later owned by Whitbread and has been owned by The Coca-Cola Company since January 2019.</p>
+      <p class="cite">Evidence: <a href="sources.html#roasters-s11">[11]</a> <a href="sources.html#roasters-s12">[12]</a></p>
+    </div>
+
+    <div class="profile">
+      <h3 class="brand-head"><img class="brand-logo" src="images/photos/logo-lavazza.png" alt=""><span class="brand-name">Lavazza</span></h3>
+      <p class="meta">Turin, Italy · founded 1895</p>
+      <p>Began when Luigi Lavazza bought a small grocery shop on Via San Tommaso in Turin, where he started blending coffees. It is still a family company, run by the third and fourth generations of the Lavazza family.</p>
+      <p class="cite">Evidence: <a href="sources.html#roasters-s13">[13]</a></p>
+    </div>
+
+    <div class="profile">
+      <h3 class="brand-head"><img class="brand-logo" src="images/photos/logo-illy.png" alt=""><span class="brand-name">illy</span></h3>
+      <p class="meta">Trieste, Italy · founded 1933</p>
+      <p>Founded by Francesco Illy, a Hungarian-born former soldier who settled in Trieste after the First World War. In 1935 he invented the <em>Illetta</em>, an early automatic espresso machine. The company has been led by his son Ernesto and then by the third generation of the family.</p>
+      <p class="cite">Evidence: <a href="sources.html#roasters-s14">[14]</a> <a href="sources.html#roasters-s15">[15]</a></p>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section chat-scene" id="quiz-section">
+    <div class="quiz-beans" aria-hidden="true">
+      <img src="images/bean-1.png" alt="" style="left:4%;top:8%;--s:46px;--r:-25deg;--d:0s">
+      <img src="images/bean-2.png" alt="" style="left:15%;top:62%;--s:34px;--r:40deg;--d:-1.2s">
+      <img src="images/bean-3.png" alt="" style="left:9%;top:36%;--s:28px;--r:10deg;--d:-2.1s">
+      <img src="images/bean-2.png" alt="" style="left:24%;top:14%;--s:24px;--r:-60deg;--d:-0.6s">
+      <img src="images/bean-1.png" alt="" style="left:6%;top:86%;--s:38px;--r:75deg;--d:-1.8s">
+      <img src="images/bean-3.png" alt="" style="left:30%;top:90%;--s:30px;--r:-15deg;--d:-2.6s">
+      <img src="images/bean-1.png" alt="" style="left:44%;top:5%;--s:30px;--r:30deg;--d:-0.9s">
+      <img src="images/bean-2.png" alt="" style="left:55%;top:93%;--s:40px;--r:-40deg;--d:-1.5s">
+      <img src="images/bean-3.png" alt="" style="left:77%;top:21%;--s:36px;--r:55deg;--d:-0.3s">
+      <img src="images/bean-1.png" alt="" style="left:80%;top:54%;--s:26px;--r:-70deg;--d:-2.3s">
+      <img src="images/bean-2.png" alt="" style="left:90%;top:12%;--s:44px;--r:20deg;--d:-1.1s">
+      <img src="images/bean-3.png" alt="" style="left:93%;top:48%;--s:32px;--r:-35deg;--d:-0.4s">
+      <img src="images/bean-1.png" alt="" style="left:84%;top:70%;--s:40px;--r:65deg;--d:-1.9s">
+      <img src="images/bean-2.png" alt="" style="left:72%;top:88%;--s:28px;--r:-10deg;--d:-2.8s">
+      <img src="images/bean-3.png" alt="" style="left:95%;top:85%;--s:24px;--r:45deg;--d:-0.7s">
+      <img src="images/bean-1.png" alt="" style="left:2%;top:52%;--s:24px;--r:-50deg;--d:-1.4s">
+    </div>
+    <h2 class="chat-title">The final test</h2>
+    <div id="quiz"></div>
+  </section>
+
+</main>
+</body>

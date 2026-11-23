@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The History | The Coffee Project</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/icons/favicon-192.png">
+<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Londrina+Solid:wght@300;400;900&family=DM+Mono:wght@400;500&family=Pacifico&display=swap">
+<link rel="stylesheet" href="transition.css">
+<link rel="stylesheet" href="fun.css">
+<link rel="stylesheet" href="content.css">
+<script src="transition.js" defer></script>
+<script src="fun.js" defer></script>
+<script src="timeline.js" defer></script>
+<script>
+  if (sessionStorage.getItem("coffeeTransition") === "yes") {
+    document.documentElement.classList.add("coffee-entering");
+  }
+</script>
+<script src="scrollstory.js" defer></script>
+
+<style>
+  html.coffee-entering {
+    background: #402718;
+  }
+
+  html.coffee-entering body {
+    visibility: hidden;
+  }
+</style>
+</head>
+ <nav>
+
+  <a href="individual.html">
+    The Coffee Project
+  </a>
+
+  <a href="coffee history.html">
+    The History
+  </a>
+
+  <a href="global statistics.html">
+    The Global Statistics
+  </a>
+
+  <a href="the roasters.html">
+    The Roasters
+  </a>
+
+  <a href="sources.html">
+    Sources
+  </a>
+</nav>
+<style>
+
+  .drawing-o {
+  display: inline-block;
+  width: 0.62em;
+  height: 1em;
+  background-image: url("title-o.png");
+  background-repeat: no-repeat;
+  background-size: auto 166%;
+  background-position: center 44%;
+  vertical-align: -0.08em;
+}
+
+  @font-face {
+  font-family: "Ombre Nouveau";
+  src: url("./ombre_nouveau/OmbreNouveauDEMO-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+  body {
+    
+    background-color: rgb(242, 230, 179);
+    font-family: "Archivo", sans-serif;
+  }
+
+  .hero {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 350px;
+  }
+
+  .hero img {
+    position: absolute;
+    width: 300px;
+    max-width: 100%;
+    z-index: 0;
+  }
+
+  .hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 150px;
+    font-weight: 900;
+    font-stretch: 90%;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    color: #402718;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
+    
+  }
+  nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #402718;
+  color: #f2e6b3;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 90%;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+}
+
+  @font-face {
+  font-family: "Ombre Nouveau";
+  src: url("./ombre_nouveau/OmbreNouveauDEMO-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+  body {
+    background-color: rgb(242, 230, 179);
+    font-family: "Archivo", sans-serif;
+  }
+  nav {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  background-color: #402718;
+  color: #f2e6b3;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 90%;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #70452e;
+}
+
+nav a:active {
+  transform: scale(1.08);
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <h1 class="page-title">The <span class="word">Hist<span class="drawing-o" aria-hidden="true"></span>ry</span></h1>
+  <p class="page-intro">From wild Ethiopian forests to the espresso machine: how a red berry became one of the world's most popular drinks.</p>
+
+  <ul class="toc">
+    <li><a href="#origins">Origins</a></li>
+    <li><a href="#uses">Early uses</a></li>
+    <li><a href="#beverage">Becoming a drink</a></li>
+    <li><a href="#spread">Going global</a></li>
+    <li><a href="sources.html#history">Sources</a></li>
+  </ul>
+
+  <!-- ============ 1. ORIGINS ============ -->
+  <section class="section" id="origins">
+    <h2>Where coffee comes from</h2>
+
+    <figure class="photo photo-right">
+      <img src="images/photos/coffee-flowers.jpg" alt="White coffee flowers on a Coffea arabica plant">
+      <figcaption>Coffea arabica in flower. The red cherries that follow hold the coffee beans. <a href="sources.html#history-credits">Photo credit</a></figcaption>
+    </figure>
+
+    <p>The coffee plant (<em>Coffea arabica</em>) is native to the highlands of <strong>Ethiopia</strong>, especially the forests of the Kaffa region. Ethiopia is coffee's botanical birthplace, but <strong>Yemen</strong> is where it first became the roasted, brewed drink we know today.</p>
+    <p class="cite">Evidence: <a href="sources.html#history-s1">[1]</a> <a href="sources.html#history-s2">[2]</a></p>
+
+    <h3>The legends</h3>
+    <figure class="photo photo-right">
+      <img src="images/photos/kaldi-goats.jpg" alt="Old engraving of Kaldi watching his goats dance after eating coffee berries">
+      <figcaption>"Kaldi and his dancing goats", from William Ukers' <em>All About Coffee</em> (1922).</figcaption>
+    </figure>
+    <p class="note"><strong>Legend, not history</strong> The stories below are folklore. None of them appear in any written record from the time they describe.</p>
+    <ul>
+      <li><span class="tag-legend">Legend</span><strong>Kaldi the goatherd:</strong> a 9th-century Ethiopian goatherd noticed his goats became lively after eating red berries, and shared them with monks. The story first appears in writing centuries later, in a 1671 book by Antoine Faustus Nairon.</li>
+      <li><span class="tag-legend">Legend</span><strong>Al-Shadhili:</strong> a Sufi mystic who is said to have noticed unusually energetic birds feeding on the berries.</li>
+      <li><span class="tag-legend">Legend</span><strong>Sheikh Omar of Mocha:</strong> exiled to the desert, he is said to have survived by boiling the berries into a drink.</li>
+    </ul>
+    <p class="cite">Evidence: <a href="sources.html#history-s1">[1]</a> <a href="sources.html#history-s17">[17]</a> <a href="sources.html#history-s19">[19]</a> <a href="sources.html#history-s20">[20]</a></p>
+
+    <h3>What the records show</h3>
+    <ul>
+      <li>The first credible written evidence of coffee drinking comes from <strong>Sufi monasteries in Yemen in the mid-15th century</strong>. The 16th-century writer al-Jaziri names Jamal al-Din al-Dhabhani, a Sufi scholar and mufti of Aden (died c. 1470), as one of the first to drink it.</li>
+      <li>Historians think the trade between Ethiopia and Yemen may have started up to a century before it was written down. The Yemeni port of <strong>Mocha</strong> became the centre of the world coffee trade.</li>
+      <li>Some accounts suggest coffee could have reached Yemen as early as the 6th century, during the Aksumite (Ethiopian) rule of Yemen. This is speculation, and there is no direct evidence for it.</li>
+    </ul>
+    <p class="cite">Evidence: <a href="sources.html#history-s1">[1]</a> <a href="sources.html#history-s2">[2]</a></p>
+
+    <h3>Where coffee grows today</h3>
+    <p>Coffee is now grown across the "coffee belt" between the tropics. In 2020 the five largest producers were:</p>
+    <div class="cards">
+      <div class="card"><span class="big">1</span><p>Brazil</p></div>
+      <div class="card"><span class="big">2</span><p>Vietnam</p></div>
+      <div class="card"><span class="big">3</span><p>Colombia</p></div>
+      <div class="card"><span class="big">4</span><p>Indonesia</p></div>
+      <div class="card"><span class="big">5</span><p>Ethiopia, still a top producer in coffee's homeland</p></div>
+    </div>
+    <p class="cite">Evidence: <a href="sources.html#history-s4">[4]</a></p>
+  </section>
+
+  <!-- ============ 2. EARLY USES ============ -->
+  <section class="section" id="uses">
+    <h2>Before the cup: early uses</h2>
+
+    <ul>
+      <li><strong>Eaten for energy:</strong> in the Ethiopian forests, people chewed the cherries and leaves. Crushed cherries were mixed with animal fat into portable energy balls for long journeys. Similar practices are reported in Uganda.</li>
+      <li><strong>Fermented fruit:</strong> a wine-like drink was made from the fermented pulp of the coffee cherry. Some researchers think alcoholic preparations came before non-alcoholic ones.</li>
+      <li><strong>Qishr:</strong> in Yemen, dried coffee cherry husks were brewed into a light, tea-like drink, which is still made today.</li>
+      <li><strong>Medicine:</strong> some of the earliest written references, credited to the physicians Rhazes (9th–10th century) and Avicenna (c. 1000), describe a plant called <em>bunchum</em> as a remedy.</li>
+      <li><strong>Religious use:</strong> Sufi communities in Yemen drank coffee to stay awake during night-long prayers.</li>
+    </ul>
+    <p class="note"><strong>Debated</strong> Historians disagree on whether Rhazes' and Avicenna's "bunchum" was really coffee, so treat these as possible early references.</p>
+    <p class="cite">Evidence: <a href="sources.html#history-s2">[2]</a> <a href="sources.html#history-s6">[6]</a> <a href="sources.html#history-s22">[22]</a> <a href="sources.html#history-s23">[23]</a> <a href="sources.html#history-s25">[25]</a></p>
+
+    <h3>From green to roasted</h3>
+    <figure class="photo photo-left">
+      <img src="images/photos/cezve.jpg" alt="Turkish coffee being poured from a copper cezve into a cup">
+      <figcaption>Turkish coffee poured from a cezve. <a href="sources.html#history-credits">Photo credit</a></figcaption>
+    </figure>
+    <p>The earliest coffee was brewed from green, unroasted beans. The oldest archaeological evidence of <strong>roasted</strong> coffee beans comes from <strong>Julfar</strong>, in present-day Ras al-Khaimah, UAE, dating to around the 12th–13th century. The darker roasting style developed in the Ottoman world in the 15th–16th centuries, alongside the <em>cezve</em>, the small long-handled pot still used for Turkish coffee.</p>
+    <p class="cite">Evidence: <a href="sources.html#history-s5">[5]</a> <a href="sources.html#history-s21">[21]</a></p>
+  </section>
+
+  <!-- ============ 3. BECOMING A DRINK ============ -->
+  <section class="section" id="beverage">
+    <h2>How coffee became a drink</h2>
+
+    <ol class="timeline">
+      <li data-img="images/photos/mocha-yemen.jpg" data-cap="The Red Sea coast at Mocha, Yemen, once the centre of the coffee trade">
+        <span class="when">15th century</span>
+        <span class="what">Roasted, brewed coffee spreads through Yemen's Sufi circles</span>
+        <span class="detail">By the 1540s it was being grown as a cash crop in the Yemeni highlands.</span>
+      </li>
+      <li data-img="images/photos/cezve.jpg" data-cap="Turkish coffee poured from a copper cezve">
+        <span class="when">c. 1554–55</span>
+        <span class="what">The first coffeehouses open in Istanbul, in the Tahtakale district</span>
+        <span class="detail">Dates vary slightly between sources.</span>
+      </li>
+      <li>
+        <span class="when">1600s</span>
+        <span class="what">Coffee reaches Europe through Venetian trade</span>
+        <span class="detail">Pope Clement VIII is said to have approved it as a "Christian beverage". This is an anecdote with no firm record.</span>
+      </li>
+      <li data-img="images/photos/caffe-florian.jpg" data-cap="Inside Caffè Florian, Venice (opened 1720)">
+        <span class="when">1645</span>
+        <span class="what">Venice: one of the first coffeehouses in Europe outside the Ottoman Empire</span>
+        <span class="detail">Sources give dates from 1629 to 1647.</span>
+      </li>
+      <li data-img="images/photos/queens-lane.jpg" data-cap="Queen's Lane Coffee House, Oxford">
+        <span class="when">1650–51</span>
+        <span class="what">Oxford's first coffeehouse opens</span>
+        <span class="detail">The University of Oxford's history faculty gives 1651; other sources say 1650.</span>
+      </li>
+      <li data-img="images/photos/pasqua-rosee-handbill.jpg" data-cap="Pasqua Rosée's handbill, "The Vertue of the Coffee Drink"">
+        <span class="when">1652</span>
+        <span class="what">London: Pasqua Rosée opens the city's first coffeehouse</span>
+        <span class="detail">Rosée came from Smyrna (modern İzmir) in the Ottoman Empire. His coffeehouse burned down in the Great Fire of 1666 and was rebuilt as the Jamaica Coffee House. Within decades, London had hundreds of coffeehouses.</span>
+      </li>
+      <li data-img="images/photos/cafe-procope.jpg" data-cap="Café Procope, Paris, today">
+        <span class="when">1686</span>
+        <span class="what">Paris: Café Procope opens</span>
+        <span class="detail">Coffee had been sold in Paris from the 1670s, and Procope is the city's oldest surviving café.</span>
+      </li>
+      <li data-img="images/photos/boston-tea-party.jpg" data-cap="The Boston Tea Party, lithograph (1846)">
+        <span class="when">1773</span>
+        <span class="what">The Boston Tea Party</span>
+        <span class="detail">Often cited as a turning point that pushed American colonists from tea towards coffee.</span>
+      </li>
+      <li data-img="images/photos/angelo-moriondo.png" data-cap="Angelo Moriondo, inventor of a steam coffee machine">
+        <span class="when">1884</span>
+        <span class="what">Angelo Moriondo of Turin patents a steam coffee machine</span>
+        <span class="detail">A bulk brewer rather than a true espresso machine, but its direct forerunner.</span>
+      </li>
+      <li data-img="images/photos/bezzera-espresso.jpg" data-cap="Bezzera and Pavoni's "caffè espresso" stand at the 1906 Milan Fair">
+        <span class="when">1901–1906</span>
+        <span class="what">The espresso machine is born</span>
+        <span class="detail">Luigi Bezzera improves the design (c. 1901), Desiderio Pavoni buys his patents (1903) and markets the machine, and "caffè espresso" is shown at the 1906 Milan Fair.</span>
+      </li>
+    </ol>
+    <p class="cite">Evidence: <a href="sources.html#history-s7">[7]</a> <a href="sources.html#history-s8">[8]</a> <a href="sources.html#history-s9">[9]</a> <a href="sources.html#history-s10">[10]</a> <a href="sources.html#history-s26">[26]</a> <a href="sources.html#history-s28">[28]</a> <a href="sources.html#history-s30">[30]</a></p>
+
+    <h3>Penny universities</h3>
+    <p>English coffeehouses were nicknamed <strong>"penny universities"</strong>: for the price of a cup, anyone could join conversations on politics, science and business. Several early European coffeehouses were founded by immigrants from the Ottoman world.</p>
+    <p class="cite">Evidence: <a href="sources.html#history-s8">[8]</a> <a href="sources.html#history-s26">[26]</a> <a href="sources.html#history-s27">[27]</a></p>
+
+    <h3>Where the word comes from</h3>
+    <p>The words <em>coffee</em> and <em>café</em> come from the Arabic <strong>qahwa</strong>, through the Turkish <em>kahve</em> and the Italian <em>caffè</em>.</p>
+    <p class="cite">Evidence: <a href="sources.html#history-s11">[11]</a></p>
+  </section>
+
+  <!-- ============ 4. GOING GLOBAL ============ -->
+  <section class="section" id="spread">
+    <h2>How coffee went global</h2>
+    <p>For a long time Yemen controlled the coffee trade. Coffee was grown outside Arabia only because people took seeds and seedlings to new places, by smuggling or by trade:</p>
+    <ol class="timeline">
+      <li data-img="images/photos/chikmagalur-estate.jpg" data-cap="A coffee estate in Chikmagalur, Karnataka">
+        <span class="when">c. 1600–1670</span>
+        <span class="what">India</span>
+        <span class="detail">Tradition says the Sufi pilgrim Baba Budan smuggled seven coffee seeds out of Yemen and planted them in the Chikmagalur hills of Karnataka. The Coffee Board of India dates this to around 1600; other accounts say 1670. The "seven beans" detail is part of the legend.</span>
+      </li>
+      <li data-img="images/photos/java-plantation.jpg" data-cap="A coffee plantation in East Java (early 1900s)">
+        <span class="when">1690s</span>
+        <span class="what">Java, Indonesia</span>
+        <span class="detail">The Dutch shipped coffee plants to their colony on Java in 1696, and by 1699 the plantations had taken hold, which is why "java" became a nickname for coffee.</span>
+      </li>
+      <li data-img="images/photos/gabriel-de-clieu.jpg" data-cap="Gabriel de Clieu, 18th-century portrait">
+        <span class="when">1720s</span>
+        <span class="what">The Caribbean</span>
+        <span class="detail">French naval officer Gabriel de Clieu carried a coffee seedling to Martinique, usually dated to 1723.</span>
+      </li>
+      <li data-img="images/photos/brazil-fazenda.jpg" data-cap="Coffee fields on a Brazilian fazenda">
+        <span class="when">1727</span>
+        <span class="what">Brazil</span>
+        <span class="detail">Francisco de Melo Palheta brought coffee from French Guiana to Brazil, which is today the world's largest producer.</span>
+      </li>
+    </ol>
+    <p class="cite">Evidence: <a href="sources.html#history-s3">[3]</a> <a href="sources.html#history-s12">[12]</a> <a href="sources.html#history-s13">[13]</a> <a href="sources.html#history-s14">[14]</a></p>
+  </section>
+
+</main>
+</body>
+
+</html>

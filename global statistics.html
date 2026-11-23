@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Global Statistics</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/icons/favicon-192.png">
+<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Londrina+Solid:wght@300;400;900&family=DM+Mono:wght@400;500&family=Pacifico&display=swap">
+<link rel="stylesheet" href="transition.css">
+<link rel="stylesheet" href="fun.css">
+<link rel="stylesheet" href="content.css">
+<script src="transition.js" defer></script>
+<script src="fun.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" defer></script>
+<script src="globe.js" defer></script>
+<script src="people.js" defer></script>
+<script src="sacks.js" defer></script>
+<script src="drinks.js" defer></script>
+<script>
+  if (sessionStorage.getItem("coffeeTransition") === "yes") {
+    document.documentElement.classList.add("coffee-entering");
+  }
+</script>
+<script src="scrollstory.js" defer></script>
+
+<style>
+  html.coffee-entering {
+    background: #402718;
+  }
+
+  html.coffee-entering body {
+    visibility: hidden;
+  }
+</style>
+</head>
+ <nav>
+
+  <a href="individual.html">
+    The Coffee Project
+  </a>
+
+  <a href="coffee history.html">
+    The History
+  </a>
+
+  <a href="global statistics.html">
+    The Global Statistics
+  </a>
+
+  <a href="the roasters.html">
+    The Roasters
+  </a>
+
+  <a href="sources.html">
+    Sources
+  </a>
+</nav>
+<style>
+  .drawing-o {
+  display: inline-block;
+  width: 0.62em;
+  height: 1em;
+  background-image: url("title-o.png");
+  background-repeat: no-repeat;
+  background-size: auto 166%;
+  background-position: center 44%;
+  vertical-align: -0.08em;
+}
+
+  @font-face {
+  font-family: "Ombre Nouveau";
+  src: url("./ombre_nouveau/OmbreNouveauDEMO-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+  body {
+    background-color: rgb(242, 230, 179);
+    font-family: "Archivo", sans-serif;
+  }
+
+  .hero {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 350px;
+  }
+
+  .hero img {
+    position: absolute;
+    width: 300px;
+    max-width: 100%;
+    z-index: 0;
+  }
+
+  .hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 150px;
+    font-weight: 900;
+    font-stretch: 90%;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    color: #402718;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
+    
+  }
+  nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #402718;
+  color: #f2e6b3;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 90%;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+}
+
+  @font-face {
+  font-family: "Ombre Nouveau";
+  src: url("./ombre_nouveau/OmbreNouveauDEMO-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+  body {
+    
+    background-color: rgb(242, 230, 179);
+    font-family: "Archivo", sans-serif;
+  }
+nav {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  background-color: #402718;
+  color: #f2e6b3;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 90%;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #70452e;
+}
+
+nav a:active {
+  transform: scale(1.08);
+}
+</style>
+<body>
+<main class="page">
+  <h1 class="page-title" aria-label="The Global Statistics">The <span class="word">Gl<span class="drawing-o" aria-hidden="true"></span>bal</span> Statistics</h1>
+  <p class="page-intro">Which beans the world grows, which drinks people search for, and who drinks the most coffee.</p>
+
+  <ul class="toc">
+    <li><a href="#explore">Globe</a></li>
+    <li><a href="#beans">Beans</a></li>
+    <li><a href="#drinks">Drinks</a></li>
+    <li><a href="#guide">Drink guide</a></li>
+    <li><a href="#regions">By continent</a></li>
+    <li><a href="#countries">By country</a></li>
+    <li><a href="sources.html#stats">Sources</a></li>
+  </ul>
+
+  <!-- ============ GLOBE ============ -->
+  <section class="section" id="explore">
+    <h2>Explore the globe</h2>
+    <p>Drag the globe to spin it, and click a continent to see how much coffee it drinks, along with highlights for some of its countries.</p>
+    <div class="globe-layout">
+      <div id="globe"></div>
+      <div id="globe-info" class="globe-panel" aria-live="polite">
+        <p class="globe-kicker">Start here</p>
+        <h3>Pick a continent</h3>
+        <p>Click anywhere on the globe, or choose a continent below.</p>
+        <p>In 2023/24 the world drank about <strong>177 million 60 kg bags</strong> of coffee. Europe drank the most, followed by Asia &amp; Oceania.</p>
+        <p class="cite">Evidence: <a href="sources.html#stats-s6">[6]</a></p>
+      </div>
+    </div>
+    <div id="globe-regions" class="globe-region-buttons" aria-label="Choose a continent"></div>
+  </section>
+
+  <!-- ============ 1. BEANS ============ -->
+  <section class="section" id="beans">
+    <h2>Which beans does the world drink?</h2>
+    <p>Almost all of the world's coffee comes from two species:</p>
+    <div class="cards">
+      <div class="card">
+        <img class="card-img" src="images/photos/arabica-beans.jpg" alt="Medium-roasted Arabica coffee beans">
+        <span class="big">Arabica</span>
+        <p>About <strong>60%</strong> of global production. Smoother and more aromatic, used mainly for roast-and-ground coffee.</p>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/photos/robusta-cherries.jpg" alt="Ripe red and yellow Robusta coffee cherries">
+        <span class="big">Robusta</span>
+        <p>Cheaper to grow, more bitter and higher in caffeine. Used mainly in instant coffee and espresso blends.</p>
+      </div>
+    </div>
+    <p class="cite">Evidence: <a href="sources.html#stats-s1">[1]</a></p>
+
+    <h3>Robusta is catching up</h3>
+    <div class="bars" role="img" aria-label="Robusta share of world coffee production: 28% in 1990/91, 44% in 2021/22">
+      <div class="bar-row">
+        <span class="bar-label">Robusta share, 1990/91</span>
+        <div class="bar-track"><div class="bar-fill" style="--value: 28%">28%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Robusta share, 2021/22</span>
+        <div class="bar-track"><div class="bar-fill" style="--value: 44%">44%</div></div>
+      </div>
+    </div>
+    <p class="cite">Evidence: <a href="sources.html#stats-s2">[2]</a> (International Coffee Organization data)</p>
+
+    <h3>A record harvest?</h3>
+    <p>In June 2025 the US Department of Agriculture (USDA) forecast a record world harvest of <strong>178.7 million 60 kg bags</strong> for 2025/26, more than 10 million tonnes of coffee, led by Brazil (65 million bags) and Vietnam (31 million). In December 2025 it lowered the forecast to <strong>175.3 million bags</strong>.</p>
+    <p class="cite">Evidence: <a href="sources.html#stats-s3">[3]</a> <a href="sources.html#stats-s4">[4]</a></p>
+
+    <h3>Who grows it</h3>
+    <figure class="photo photo-wide">
+      <img src="images/photos/coffee-harvest.jpg" alt="Hands picking ripe red coffee cherries from a branch">
+      <figcaption>Most coffee is still picked by hand, much of it on small family farms. <a href="sources.html#stats-credits">Photo credit</a></figcaption>
+    </figure>
+    <div class="cards">
+      <div class="card"><span class="big">~50%</span><p>of the world's coffee comes from just two countries: Brazil and Vietnam</p></div>
+      <div class="card"><span class="big">Up to 80%</span><p>of the world's coffee farms are run by smallholders: small family farms</p></div>
+      <div class="card"><span class="big">Up to 25M</span><p>farming families depend on coffee for a living</p></div>
+    </div>
+    <p class="cite">Evidence: <a href="sources.html#stats-s1">[1]</a></p>
+
+    <p class="note"><strong>About this data</strong> Official statistics count coffee <em>produced and exported</em> by species, not coffee <em>drunk</em> by species. The figures above are the best available measure of which beans end up in our cups.</p>
+  </section>
+
+  <!-- ============ 2. DRINKS ============ -->
+  <section class="section" id="drinks">
+    <h2>The world's favourite coffee drinks</h2>
+    <p>A 2024 study by the coffee site Coffeeness compared Google searches for 21 coffee drinks in different countries. The results:</p>
+    <div class="cards">
+      <div class="card"><span class="big">24</span><p>countries searched most for <strong>cappuccino</strong></p></div>
+      <div class="card"><span class="big">14</span><p>countries searched most for <strong>espresso</strong></p></div>
+      <div class="card"><span class="big">35</span><p>countries' top <strong>iced</strong> drink was the <strong>frappé</strong></p></div>
+    </div>
+    <p>After cappuccino and espresso came black coffee, americano and mocha. Among iced drinks, frappé was followed by iced latte, Frappuccino, cold brew and Spanish latte.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Country</th><th>Most-searched drink</th></tr></thead>
+        <tbody>
+          <tr><td>Spain, France, Switzerland</td><td>Cappuccino</td></tr>
+          <tr><td>Germany, Greece, Canada, USA</td><td>Espresso</td></tr>
+          <tr><td>Brazil, Malaysia</td><td>Latte</td></tr>
+          <tr><td>Turkey</td><td>Turkish coffee</td></tr>
+          <tr><td>United Kingdom</td><td>Macchiato</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><strong>Read with care</strong> This study measures what people <em>search for online</em>, not what they buy or drink, and some results were questioned (Italy, for example, was missing). We found no reliable worldwide dataset of coffee consumption by drink type.</p>
+    <p class="cite">Evidence: <a href="sources.html#stats-s5">[5]</a> <a href="sources.html#stats-s8">[8]</a> <a href="sources.html#stats-s9">[9]</a> <a href="sources.html#stats-s10">[10]</a></p>
+  </section>
+
+  <!-- ============ 3. REGIONS ============ -->
+  <section class="section" id="guide">
+    <h2>A guide to famous coffee drinks</h2>
+    <p>Almost every drink on a café menu starts with a shot of espresso. What changes is what goes in with it. Hover over a drink to pour it.</p>
+
+    <div class="drink-guide">
+      <article class="drink-card">
+        <span class="drink-art" data-drink="espresso"></span>
+        <h3>Espresso</h3>
+        <span class="drink-tag">Italy</span>
+        <ul class="drink-ingredients">
+          <li>Finely ground coffee</li>
+          <li>Hot water, pushed through at high pressure</li>
+          <li>A golden layer of crema on top</li>
+        </ul>
+      </article>
+      <article class="drink-card">
+        <span class="drink-art" data-drink="macchiato"></span>
+        <h3>Macchiato</h3>
+        <span class="drink-tag">Italy</span>
+        <ul class="drink-ingredients">
+          <li>1 shot of espresso</li>
+          <li>A spoonful of milk foam</li>
+        </ul>
+      </article>
+      <article class="drink-card">
+        <span class="drink-art" data-drink="cappuccino"></span>
+        <h3>Cappuccino</h3>
+        <span class="drink-tag">Italy</span>
+        <ul class="drink-ingredients">
+          <li>&#8531; espresso</li>
+          <li>&#8531; steamed milk</li>
+          <li>&#8531; milk foam</li>
+          <li>A dusting of cocoa (optional)</li>
+        </ul>
+      </article>
+      <article class="drink-card">
+        <span class="drink-art" data-drink="latte"></span>
+        <h3>Caffè latte</h3>
+        <span class="drink-tag">Italy</span>
+        <ul class="drink-ingredients">
+          <li>1 shot of espresso</li>
+          <li>Lots of steamed milk</li>
+          <li>A thin layer of foam</li>
+        </ul>
+      </article>
+      <article class="drink-card">
+        <span class="drink-art" data-drink="flatwhite"></span>
+        <h3>Flat white</h3>
+        <span class="drink-tag">Australia / New Zealand</span>
+        <ul class="drink-ingredients">
+          <li>1&ndash;2 shots of espresso</li>
+          <li>Silky &ldquo;microfoam&rdquo; milk</li>
+          <li>No thick foam on top</li>
+        </ul>
+      </article>
+      <article class="drink-card">
+        <span class="drink-art" data-drink="americano"></span>
+        <h3>Americano</h3>
+        <span class="drink-tag">Italy / USA</span>
+        <ul class="drink-ingredients">
+          <li>1&ndash;2 shots of espresso</li>
+          <li>Hot water</li>
+        </ul>
+      </article>
+      <article class="drink-card">
+        <span class="drink-art" data-drink="mocha"></span>
+        <h3>Mocha</h3>
+        <span class="drink-tag">Named after Yemen</span>
+        <ul class="drink-ingredients">
+          <li>1 shot of espresso</li>
+          <li>Chocolate</li>
+          <li>Steamed milk</li>
+          <li>Whipped cream (optional)</li>
+        </ul>
+      </article>
+      <article class="drink-card">
+        <span class="drink-art" data-drink="turkish"></span>
+        <h3>Turkish coffee</h3>
+        <span class="drink-tag">Türkiye</span>
+        <ul class="drink-ingredients">
+          <li>Coffee ground to a fine powder</li>
+          <li>Cold water</li>
+          <li>Sugar (optional)</li>
+          <li>Brewed in a small pot and served unfiltered</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="cite">Evidence: <a href="sources.html#stats-s15">[15]</a> <a href="sources.html#stats-s16">[16]</a> <a href="sources.html#stats-s17">[17]</a> <a href="sources.html#stats-s18">[18]</a></p>
+  </section>
+
+  <section class="section" id="regions">
+    <h2>Who drinks the most: by continent</h2>
+    <p>In the 2023/24 coffee year the world drank about <strong>177 million 60 kg bags</strong> of coffee. Here is how that splits by continent:</p>
+
+    <div class="bars" role="img" aria-label="World coffee consumption by continent, 2023/24, in million 60 kg bags">
+      <div class="bar-row"><span class="bar-label">Europe</span><div class="bar-track"><div class="bar-fill" style="--value: 100%">53.7M · 30.4%</div></div></div>
+      <div class="bar-row"><span class="bar-label">Asia &amp; Oceania</span><div class="bar-track"><div class="bar-fill" style="--value: 85.1%">45.7M · 25.8%</div></div></div>
+      <div class="bar-row"><span class="bar-label">North America</span><div class="bar-track"><div class="bar-fill" style="--value: 68.9%">37.0M · 20.9%</div></div></div>
+      <div class="bar-row"><span class="bar-label">South America</span><div class="bar-track"><div class="bar-fill" style="--value: 52.1%">28.0M · 15.8%</div></div></div>
+      <div class="bar-row"><span class="bar-label">Africa</span><div class="bar-track"><div class="bar-fill" style="--value: 23.3%">12.5M · 7.1%</div></div></div>
+    </div>
+
+    <ul>
+      <li><strong>North America</strong> includes the USA and Canada (30.9 million bags) as well as Mexico, Central America and the Caribbean (6.1 million bags).</li>
+      <li><strong>Asia and Oceania</strong> are only published together. For scale, Australia alone drinks just over 2 million bags a year.</li>
+      <li>Coffee-<strong>producing</strong> countries drank about 32% of the world's coffee, and <strong>importing</strong> countries about 68%.</li>
+      <li>South America grows about half of the world's coffee but ranks only fourth in how much it drinks.</li>
+    </ul>
+    <h3>If 100 people drank all the world's coffee&hellip;</h3>
+    <p>Each person below stands for <strong>1%</strong> of all the coffee drunk in the world in 2023/24, coloured by continent.</p>
+    <div id="people-chart" class="people-chart"></div>
+    <div id="people-legend" class="people-legend" aria-label="Highlight a continent"></div>
+    <p id="people-readout" class="people-readout" aria-live="polite"></p>
+    <p class="note"><strong>What the people show</strong> The icons show each continent's <em>share of the coffee drunk</em>, not the number of coffee drinkers. There is no reliable worldwide count of how many people drink coffee.</p>
+
+    <p class="note"><strong>How we got these figures</strong> The International Coffee Organization (ICO) reports consumption for six regions, not continents. We added its "North America" (USA and Canada) and "Caribbean, Central America &amp; Mexico" regions together to get the North American total. The ICO does not report Asia and Oceania separately, and we found no reliable figure to split them. The Australia figure comes from a different source (USDA data reported by Statista), which counts coffee in a slightly different way, so it is given only for scale.</p>
+    <p class="cite">Evidence: <a href="sources.html#stats-s6">[6]</a> <a href="sources.html#stats-s14">[14]</a></p>
+  </section>
+
+  <!-- ============ 4. COUNTRIES ============ -->
+  <section class="section" id="countries">
+    <h2>Who drinks the most: per person</h2>
+    <p>Measured per person, the Nordic countries lead the world by a wide margin.</p>
+    <p class="sacks-key">Each sack is filled to the kilos of coffee one person drinks in a year. A full sack is Finland's 12 kg.</p>
+    <div id="sacks" class="sacks"></div>
+    <details class="table-toggle">
+      <summary>Show as a table</summary>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th class="num">#</th><th>Country</th><th class="num">kg per person per year</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Finland</td><td class="num">12.0</td></tr>
+          <tr><td class="num">2</td><td>Norway</td><td class="num">9.9</td></tr>
+          <tr><td class="num">3</td><td>Iceland</td><td class="num">9.0</td></tr>
+          <tr><td class="num">4</td><td>Denmark</td><td class="num">8.7</td></tr>
+          <tr><td class="num">5</td><td>Netherlands</td><td class="num">8.4</td></tr>
+          <tr><td class="num">6</td><td>Sweden</td><td class="num">8.2</td></tr>
+          <tr><td class="num">7</td><td>Switzerland</td><td class="num">7.9</td></tr>
+          <tr><td class="num">8</td><td>Belgium</td><td class="num">6.8</td></tr>
+          <tr><td class="num">9</td><td>Luxembourg</td><td class="num">6.5</td></tr>
+          <tr><td class="num">10</td><td>Canada</td><td class="num">6.2</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </details>
+    <ul>
+      <li><strong>Canada</strong> is the only country outside Europe in the top ten.</li>
+      <li>The <strong>USA</strong> drinks far less per person (about 4.2 kg, around 25th place), but it is one of the largest markets in total because of its population.</li>
+    </ul>
+    <p class="note"><strong>About this data</strong> These per-person figures come from ICO data for roughly 2017–2021, republished by news and statistics sites. Figures vary between sources: Finland, for example, appears as 9.6 kg in older tables and 12 kg in newer ones.</p>
+    <p class="cite">Evidence: <a href="sources.html#stats-s7">[7]</a> <a href="sources.html#stats-s11">[11]</a> <a href="sources.html#stats-s12">[12]</a> <a href="sources.html#stats-s13">[13]</a></p>
+  </section>
+
+</main>
+</body>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources | The Coffee Project</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/icons/favicon-192.png">
+<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Londrina+Solid:wght@300;400;900&family=DM+Mono:wght@400;500&family=Pacifico&display=swap">
+<link rel="stylesheet" href="transition.css">
+<link rel="stylesheet" href="fun.css">
+<link rel="stylesheet" href="content.css">
+<script src="transition.js" defer></script>
+<script src="fun.js" defer></script>
+<script>
+  if (sessionStorage.getItem("coffeeTransition") === "yes") {
+    document.documentElement.classList.add("coffee-entering");
+  }
+</script>
+
+<style>
+  html.coffee-entering {
+    background: #402718;
+  }
+
+  html.coffee-entering body {
+    visibility: hidden;
+  }
+</style>
+</head>
+<nav>
+
+  <a href="individual.html">
+    The Coffee Project
+  </a>
+
+  <a href="coffee history.html">
+    The History
+  </a>
+
+  <a href="global statistics.html">
+    The Global Statistics
+  </a>
+
+  <a href="the roasters.html">
+    The Roasters
+  </a>
+
+  <a href="sources.html">
+    Sources
+  </a>
+</nav>
+<style>
+  .drawing-o {
+  display: inline-block;
+  width: 0.62em;
+  height: 1em;
+  background-image: url("title-o.png");
+  background-repeat: no-repeat;
+  background-size: auto 166%;
+  background-position: center 44%;
+  vertical-align: -0.08em;
+}
+
+  @font-face {
+  font-family: "Ombre Nouveau";
+  src: url("./ombre_nouveau/OmbreNouveauDEMO-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+  body {
+    background-color: rgb(242, 230, 179);
+    font-family: "Archivo", sans-serif;
+  }
+nav {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  background-color: #402718;
+  color: #f2e6b3;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 90%;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #70452e;
+}
+
+nav a:active {
+  transform: scale(1.08);
+}
+</style>
+<body>
+<main class="page sources-page">
+  <h1 class="page-title" aria-label="Sources">S<span class="drawing-o" aria-hidden="true"></span>urces</h1>
+  <p class="page-intro">Every fact on The Coffee Project comes from somewhere. Here are all the sources and image credits, grouped by page. The numbers match the [numbers] you'll see next to each fact.</p>
+
+  <ul class="toc">
+    <li><a href="#history">The History</a></li>
+    <li><a href="#stats">The Global Statistics</a></li>
+    <li><a href="#roasters">The Roasters</a></li>
+    <li><a href="#home">Home page images</a></li>
+  </ul>
+
+  <section class="section sources src-group" id="history">
+    <h2>The History</h2>
+    <p class="src-back"><a href="coffee history.html">← Back to The History</a></p>
+    <p class="src-note">Numbers in square brackets on that page link to these sources. Sources 1–14 were checked against the original publications for this site.</p>
+    <ol>
+      <li id="history-s1">Britannica. <a href="https://www.britannica.com/topic/history-of-coffee" target="_blank" rel="noopener">History of coffee</a>.</li>
+      <li id="history-s2">Muslim Heritage. <a href="https://muslimheritage.com/coffee-route-yemen-london/" target="_blank" rel="noopener">The coffee route from Yemen to London</a>.</li>
+      <li id="history-s3">Coffee Board of India. <a href="https://coffeeboard.gov.in/aboutus.aspx" target="_blank" rel="noopener">About us</a>.</li>
+      <li id="history-s4">World Economic Forum (using International Coffee Organization data). <a href="https://www.weforum.org/stories/2021/10/which-country-produced-the-most-coffee-in-2020/" target="_blank" rel="noopener">Which country produced the most coffee in 2020?</a></li>
+      <li id="history-s5">Gulf News. <a href="https://gulfnews.com/uae/coffee-comes-home-with-new-exhibition-in-sharjah-1.67062934" target="_blank" rel="noopener">Coffee comes home with new exhibition in Sharjah</a>.</li>
+      <li id="history-s6">Wikipedia. <a href="https://en.wikipedia.org/wiki/Qishr" target="_blank" rel="noopener">Qishr</a>.</li>
+      <li id="history-s7">Daily Sabah. <a href="https://www.dailysabah.com/feature/2015/10/09/transformation-of-ottoman-coffeehouses-to-the-present" target="_blank" rel="noopener">Transformation of Ottoman coffeehouses to the present</a> (2015).</li>
+      <li id="history-s8">Historic UK. <a href="https://www.historic-uk.com/CultureUK/English-Coffeehouses-Penny-Universities" target="_blank" rel="noopener">English coffeehouses, penny universities</a>.</li>
+      <li id="history-s9">EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/social-sciences-and-humanities/cafe" target="_blank" rel="noopener">Café</a>.</li>
+      <li id="history-s10">Smithsonian Magazine. <a href="https://www.smithsonianmag.com/innovation/the-long-history-of-the-espresso-machine-126012814/" target="_blank" rel="noopener">The long history of the espresso machine</a>.</li>
+      <li id="history-s11">Wiktionary. <a href="https://en.wiktionary.org/wiki/coffee" target="_blank" rel="noopener">coffee: etymology</a>.</li>
+      <li id="history-s12">National Coffee Association USA. <a href="https://www.ncausa.org/i4a/pages/index.cfm?pageID=68" target="_blank" rel="noopener">The history of coffee</a>.</li>
+      <li id="history-s13">Saveur. <a href="https://www.saveur.com/article/Wine-and-Drink/The-History-of-Coffee-Part-I" target="_blank" rel="noopener">The history of coffee, part I</a>.</li>
+      <li id="history-s14">American Scientist (2008), via USDA Agricultural Research Service. <a href="https://ars.usda.gov/arsuserfiles/5818/The%20Rise%20of%20Coffee%20-%20American%20Scientist%202008.pdf" target="_blank" rel="noopener">The rise of coffee</a> (PDF).</li>
+    </ol>
+    <h3>Further reading</h3>
+    <p class="src-note">These sources come from the original research for this site. They are listed by title.</p>
+    <ol start="15">
+      <li id="history-s15">De'Longhi. The history of coffee.</li>
+      <li id="history-s16">CoffeeGeek. Yemen: the ancient origins of coffee.</li>
+      <li id="history-s17">Mental Floss. Who discovered coffee?</li>
+      <li id="history-s18">Cafédirect. The history of coffee.</li>
+      <li id="history-s19">Zócalo Public Square. Your coffee is much older and more legendary than it seems.</li>
+      <li id="history-s20">Sucafina. Goats, monks and coffee's origins.</li>
+      <li id="history-s21">Barista Hustle. A history of coffee roasting (citing Pendergrast 2010; Ukers 1922; Kaltenstadler 2011).</li>
+      <li id="history-s22">The Nibble. The history of coffee.</li>
+      <li id="history-s23">Gaviña. The history of coffee.</li>
+      <li id="history-s24">Pergamino. History of coffee.</li>
+      <li id="history-s25">The Daily Meal. Before it was sipped, coffee was chewed.</li>
+      <li id="history-s26">Fresh Cup. How early-modern Islamic world coffeehouses shaped café culture (citing Jonathan Morris).</li>
+      <li id="history-s27">Brewminate. A history of the coffeehouse.</li>
+      <li id="history-s28">McKay et al. <em>A History of Western Society</em>, ch. 16 (citing Markman Ellis).</li>
+      <li id="history-s29">Lavazza. History of espresso.</li>
+      <li id="history-s30">University of Oxford, History of Science, Medicine and Technology. From Istanbul to Oxford.</li>
+    </ol>
+
+    <h3 id="history-credits">Image credits</h3>
+    <p class="src-note">Photos and artworks from Wikimedia Commons, used under the licences shown. Company logos belong to their owners and are shown only to identify them.</p>
+    <ul class="credits">
+      <li>Coffee flowers: Marcelo Corrêa, CC BY-SA 3.0, via <a href="https://commons.wikimedia.org/wiki/File:Coffee_Flowers.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Kaldi and his dancing goats: Unknown artist, in William Ukers, All About Coffee (1922), public domain, via <a href="https://commons.wikimedia.org/wiki/File:All_about_coffee--10--kaldi_and_his_dancing_goats.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Turkish coffee and cezve: Eaeeae, CC BY-SA 3.0, via <a href="https://commons.wikimedia.org/wiki/File:Türk_Kahvesi_-_Bakir_Cezve.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Mocha, Yemen: tower10, CC BY-SA 3.0, via <a href="https://commons.wikimedia.org/wiki/File:Mocha_Red_Sea_-_panoramio.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Caffè Florian, Venice: David Sancho 大衛, CC BY 3.0, via <a href="https://commons.wikimedia.org/wiki/File:Cafe_Florian_(132220111).jpeg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Queen's Lane Coffee House, Oxford: Jaggery, CC BY-SA 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Queens_Lane_side_of_Queens_Lane_Coffee_House,_Oxford_(geograph_4634244)_(cropped).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>"The Vertue of the Coffee Drink" handbill: Pasqua Rosée, public domain, via <a href="https://commons.wikimedia.org/wiki/File:The_Vertue_of_the_COFFEE_Drink.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Café Procope, Paris: Jean-Marie Hullot from France, CC BY-SA 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Le_Procope_1,_Paris_2010.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>The Boston Tea Party: Nathaniel Currier (lithograph, 1846), public domain, via <a href="https://commons.wikimedia.org/wiki/File:Boston_Tea_Party_w.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Angelo Moriondo: Richie Bendall, CC0, via <a href="https://commons.wikimedia.org/wiki/File:Angelo_Moriondo_retouched.png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Bezzera & Pavoni at the 1906 Milan Fair: Unknown photographer (1906), public domain, via <a href="https://commons.wikimedia.org/wiki/File:Bezzera_&_caffè_espresso.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Coffee estate, Chikmagalur: Ashwin Kumar from Bangalore, India, CC BY-SA 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Chikmagalur_Coffee_Estate_(8322311510).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Coffee plantation, East Java: H. (Hendrik) Veen (Fotograaf/photographer)., CC BY-SA 3.0, via <a href="https://commons.wikimedia.org/wiki/File:COLLECTIE_TROPENMUSEUM_Koffieplantage_Junggo_Oost-Java_TMnr_10021937.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Gabriel de Clieu: Unknown 18th-century artist, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Gabriel_de_Clieu.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Coffee fazenda, Brazil: Knase, CC BY 3.0 de, via <a href="https://commons.wikimedia.org/wiki/File:Fazenda_Da_Lagoa.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+    </ul>
+
+  </section>
+
+  <section class="section sources src-group" id="stats">
+    <h2>The Global Statistics</h2>
+    <p class="src-back"><a href="global statistics.html">← Back to The Global Statistics</a></p>
+    <p class="src-note">Numbers in square brackets on that page link to these sources. Sources 1–7 were checked against the original publications for this site.</p>
+    <ol>
+      <li id="stats-s1">Food and Agriculture Organization of the United Nations (FAO). <a href="https://www.fao.org/coffee/en/" target="_blank" rel="noopener">Coffee: facts, data and global perspectives</a>.</li>
+      <li id="stats-s2">World Coffee Research (using International Coffee Organization data). <a href="https://worldcoffeeresearch.org/resources/the-rise-of-robusta-coffee" target="_blank" rel="noopener">The rise of robusta coffee</a>.</li>
+      <li id="stats-s3">USDA Foreign Agricultural Service. <a href="https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf" target="_blank" rel="noopener">Coffee: World Markets and Trade</a> (PDF, latest edition).</li>
+      <li id="stats-s4">Safras &amp; Mercado. <a href="https://safras.com.br/eng/64990-2/" target="_blank" rel="noopener">Report on the USDA 2025/26 world coffee production forecast</a> (June 2025).</li>
+      <li id="stats-s5">Coffeeness. <a href="https://coffeeness.de/en/the-most-popular-coffee-drink-in-every-country" target="_blank" rel="noopener">The most popular coffee drink in every country</a>.</li>
+      <li id="stats-s6">International Coffee Organization. <a href="https://ico.org/documents/cy2023-24/Coffee_Report_and_Outlook_December_2023_ICO.pdf" target="_blank" rel="noopener">Coffee Report and Outlook, December 2023</a> (PDF): regional consumption and production tables.</li>
+      <li id="stats-s7">WorldAtlas. <a href="https://www.worldatlas.com/society/the-top-coffee-consuming-countries.html" target="_blank" rel="noopener">The top coffee-consuming countries</a>.</li>
+    </ol>
+    <h3>Further reading</h3>
+    <p class="src-note">These sources come from the original research for this site. They are listed by title.</p>
+    <ol start="8">
+      <li id="stats-s8">Qahwa World. The most popular coffee drinks around the world.</li>
+      <li id="stats-s9">Tea &amp; Coffee Trade Journal. Cappuccino: the world's favourite coffee drink?</li>
+      <li id="stats-s10">Coffeeness. The most popular iced coffee drinks.</li>
+      <li id="stats-s11">Yahoo Lifestyle. Mapped: the countries that drink the most coffee (ICO per-capita data).</li>
+      <li id="stats-s12">Statista. Per-capita coffee consumption in the Nordic countries, 2017.</li>
+      <li id="stats-s13">Mental Floss. The 25 countries that drink the most coffee.</li>
+      <li id="stats-s14">Statista (using USDA data). <a href="https://www.statista.com/statistics/866543/australia-domestic-consumption-of-coffee" target="_blank" rel="noopener">Domestic consumption of coffee in Australia</a>.</li>
+    </ol>
+    <h3>Drink guide</h3>
+    <p class="src-note">Sources for the "Guide to famous coffee drinks" section.</p>
+    <ol start="15">
+      <li id="stats-s15">Merriam-Webster. <a href="https://www.merriam-webster.com/wordplay/where-do-we-get-cappuccino-from" target="_blank" rel="noopener">Where does the word "cappuccino" come from?</a></li>
+      <li id="stats-s16">Smithsonian Magazine. <a href="https://www.smithsonianmag.com/smart-news/your-mocha-named-after-birthplace-coffee-trade-180965016/" target="_blank" rel="noopener">Your mocha is named after the birthplace of the coffee trade</a>.</li>
+      <li id="stats-s17">UNESCO Intangible Cultural Heritage. <a href="https://ich.unesco.org/en/RL/turkish-coffee-culture-and-tradition-00645" target="_blank" rel="noopener">Turkish coffee culture and tradition</a> (inscribed 2013).</li>
+      <li id="stats-s18">University of Newcastle (Australia). <a href="https://www.newcastle.edu.au/hippocampus/story/2024/who-invented-the-flat-white" target="_blank" rel="noopener">Who invented the flat white?</a> (2024).</li>
+    </ol>
+
+    <h3 id="stats-credits">Image credits</h3>
+    <p class="src-note">Photos and artworks from Wikimedia Commons, used under the licences shown. Company logos belong to their owners and are shown only to identify them.</p>
+    <ul class="credits">
+      <li>Roasted Arabica beans: Ragesoss, CC BY-SA 3.0, via <a href="https://commons.wikimedia.org/wiki/File:Medium_roasted_Arabica_coffee_beans.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Robusta coffee cherries: Timothy A. Gonsalves, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Ripe_Seeds_Coffee_Robusta_Coorg_Karnataka_India_Feb24_D72_25688.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Picking coffee cherries: Saddymonster, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Hands-that-are-picking-coffee-beans-from-coffee-tree.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+    </ul>
+
+  </section>
+
+  <section class="section sources src-group" id="roasters">
+    <h2>The Roasters</h2>
+    <p class="src-back"><a href="the roasters.html">← Back to The Roasters</a></p>
+    <p class="src-note">Numbers in square brackets on that page link to these sources. Sources 1–15 were checked against the original publications for this site.</p>
+    <ol>
+      <li id="roasters-s1">esMadrid (Madrid's official tourism site). <a href="https://www.esmadrid.com/en/madrids-coffee-shops" target="_blank" rel="noopener">Madrid's coffee shops</a>.</li>
+      <li id="roasters-s2">Spain.info (Spain's official tourism site). <a href="https://www.spain.info/en/discover-spain/cafes-spain/" target="_blank" rel="noopener">Charming cafés with a sense of history</a>.</li>
+      <li id="roasters-s3">Pamplona City Council, tourism. <a href="https://www.pamplona.es/en/turismo/hemingwayelcafeiru%C3%B1a" target="_blank" rel="noopener">Hemingway and Café Iruña</a>.</li>
+      <li id="roasters-s4">Catalonia Today. <a href="https://www.cataloniatoday.cat/article/1667114-picasso-alive-in-barcelona.html" target="_blank" rel="noopener">Picasso alive in Barcelona</a>.</li>
+      <li id="roasters-s5">Historic Cafés Route. <a href="https://historiccafesroute.com/cafe-novelty" target="_blank" rel="noopener">Café Novelty</a>.</li>
+      <li id="roasters-s6">Falstaff. <a href="https://www.falstaff.com/en/news/these-are-the-oldest-coffee-houses-in-the-world" target="_blank" rel="noopener">These are the oldest coffee houses in the world</a>.</li>
+      <li id="roasters-s7">Wanted in Rome. <a href="https://www.wantedinrome.com/yellowpage/antico-caffe-greco-romes-oldest-coffee-bar.html" target="_blank" rel="noopener">Antico Caffè Greco, Rome's oldest coffee bar</a>.</li>
+      <li id="roasters-s8">Wanted in Rome. <a href="https://www.wantedinrome.com/news/caffe-greco-romes-oldest-coffee-house-risks-closure-amid-rent-dispute.html" target="_blank" rel="noopener">Caffè Greco, Rome's oldest coffee house, risks closure amid rent dispute</a>.</li>
+      <li id="roasters-s9">Atlas Obscura. <a href="https://atlasobscura.com/places/queen-s-lane-coffee-house-2" target="_blank" rel="noopener">Queen's Lane Coffee House</a>.</li>
+      <li id="roasters-s10">HistoryLink. <a href="https://historylink.org/file/20292" target="_blank" rel="noopener">Starbucks history</a>.</li>
+      <li id="roasters-s11">Costa Coffee. <a href="https://www.costa.co.uk/behind-the-beans/our-story/history" target="_blank" rel="noopener">Our history</a>.</li>
+      <li id="roasters-s12">The Coca-Cola Company. <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/958/the-coca-cola-company-completes-acquisition-of-costa-from-whitbread-plc" target="_blank" rel="noopener">The Coca-Cola Company completes acquisition of Costa from Whitbread</a> (January 2019).</li>
+      <li id="roasters-s13">Lavazza. <a href="https://www.lavazza.com/en/about-us/history.html" target="_blank" rel="noopener">Our history</a>.</li>
+      <li id="roasters-s14">Domus. <a href="https://domusweb.it/en/news/gallery/2024/01/16/illy-aims-to-revolutionize-the-quality-of-coffee-in-the-cup-with-illetta-designed-by-antonio-citterio.amp.html" target="_blank" rel="noopener">illy and the Illetta</a> (2024).</li>
+      <li id="roasters-s15">Wikipedia. <a href="https://en.wikipedia.org/wiki/Illy" target="_blank" rel="noopener">Illy</a>.</li>
+    </ol>
+    <h3>Further reading</h3>
+    <p class="src-note">These sources come from the original research for this site. They are listed by title.</p>
+    <ol start="16">
+      <li id="roasters-s16">KLM. Madrid's literary grand cafés.</li>
+      <li id="roasters-s17">Bean Box. 5 oldest coffee houses.</li>
+      <li id="roasters-s18">Lavazza. The most ancient coffee houses.</li>
+      <li id="roasters-s19">Mashed. The oldest coffee shops in the world.</li>
+      <li id="roasters-s20">HISTORY.com. Starbucks history.</li>
+      <li id="roasters-s21">Britannica Money. Starbucks.</li>
+    </ol>
+
+    <h3 id="roasters-credits">Image credits</h3>
+    <p class="src-note">Photos and artworks from Wikimedia Commons, used under the licences shown. Company logos belong to their owners and are shown only to identify them.</p>
+    <ul class="credits">
+      <li>Café Comercial, Madrid: Luis García (Zaqarbal), CC BY-SA 3.0 es, via <a href="https://commons.wikimedia.org/wiki/File:Café_Comercial_(Madrid)_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Café Gijón, Madrid: Roberto Garcia, CC BY 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Café_Gijón.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Els Quatre Gats, Barcelona: Ralf Roletschek, GFDL 1.2, via <a href="https://commons.wikimedia.org/wiki/File:15-10-27-Els_Quatre_Gats-RalfR-WMA_2729.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Café Iruña, Pamplona: Jl FilpoC, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Café_Iruña_(Pamplona).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Café Novelty, Salamanca: Pravdaverita, CC BY 3.0, via <a href="https://commons.wikimedia.org/wiki/File:Café_literario_Novelty_Plaza_Mayor_Salamanca2.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Queen's Lane Coffee House, Oxford: Jaggery, CC BY-SA 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Queens_Lane_side_of_Queens_Lane_Coffee_House,_Oxford_(geograph_4634244)_(cropped).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Café Procope, Paris: Jean-Marie Hullot from France, CC BY-SA 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Le_Procope_1,_Paris_2010.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Caffè Florian, Venice: David Sancho 大衛, CC BY 3.0, via <a href="https://commons.wikimedia.org/wiki/File:Cafe_Florian_(132220111).jpeg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Artists in the Caffè Greco (Ludwig Passini, 1856): Ludwig Passini, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Ludwig_Passini_-_Künstler_im_Cafe_Greco_in_Rom.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Palais Ferstel (Café Central), Vienna: Florian Prischl, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Palais_Ferstel.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Starbucks logo: Starbucks Corporation, via <a href="https://en.wikipedia.org/wiki/File:Starbucks_Corporation_Logo_2011.svg" target="_blank" rel="noopener">Wikipedia</a> (non-free logo).</li>
+      <li>Costa Coffee logo: Costa Coffee, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Costa_Coffee_Logo_white_on_red.png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Lavazza logo: Lavazza, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Lavazza_Logo.png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>illy logo: illy, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Logo_Illy.svg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+    </ul>
+
+  </section>
+
+  <section class="section sources src-group" id="home">
+    <h2>Home page images</h2>
+    <p class="src-back"><a href="individual.html">← Back to The Coffee Project</a></p>
+    <h3 id="home-credits">Image credits</h3>
+    
+    <p class="src-note">Photos and artworks from Wikimedia Commons, used under the licences shown. Company logos belong to their owners and are shown only to identify them.</p>
+    <ul class="credits">
+      <li>Kaldi and his dancing goats: Unknown artist, in William Ukers, All About Coffee (1922), public domain, via <a href="https://commons.wikimedia.org/wiki/File:All_about_coffee--10--kaldi_and_his_dancing_goats.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Picking coffee cherries: Saddymonster, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Hands-that-are-picking-coffee-beans-from-coffee-tree.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Artists in the Caffè Greco (Ludwig Passini, 1856): Ludwig Passini, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Ludwig_Passini_-_Künstler_im_Cafe_Greco_in_Rom.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Starbucks logo: Starbucks Corporation, via <a href="https://en.wikipedia.org/wiki/File:Starbucks_Corporation_Logo_2011.svg" target="_blank" rel="noopener">Wikipedia</a> (non-free logo).</li>
+      <li>Costa Coffee logo: Costa Coffee, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Costa_Coffee_Logo_white_on_red.png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Lavazza logo: Lavazza, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Lavazza_Logo.png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>illy logo: illy, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Logo_Illy.svg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+      <li>Caffè Florian logo: Caffè Florian, public domain, via <a href="https://commons.wikimedia.org/wiki/File:Caffè_Florian_logo.svg" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

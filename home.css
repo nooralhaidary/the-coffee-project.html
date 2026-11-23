@@ -1,0 +1,1205 @@
+/* ============================================================
+   The Coffee Project (home page)
+   ============================================================ */
+
+/* ---------- Title with coffee drops in the corners ---------- */
+.title-wrap {
+  position: relative;
+  display: inline-block;
+  /* just enough room for the sparkles to sit on the title's corners */
+  padding: 0.2em 0.35em;
+}
+
+.title-wrap h1 {
+  margin: 0;
+  max-width: 6.4em;   /* keeps the box hugging "THE COFFEE / PROJECT" */
+}
+
+.title-wrap .drip {
+  position: absolute;
+  width: clamp(26px, 3.6vw, 48px);
+  height: auto;
+  pointer-events: none;
+  /* "translate" is separate from the sparkle animation's "transform",
+     so the hover nudge adds on top of it */
+  translate: 0 0;
+  transition: translate 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Two sparkles, sitting right on the top-left and bottom-right corners */
+.title-wrap .drip-tl {
+  top: 0.1em;
+  left: 0;
+  animation: sparkle-tl 1.8s ease-in-out infinite;
+}
+
+.title-wrap .drip-br {
+  bottom: 0.1em;
+  right: 0;
+  animation: sparkle-br 1.8s ease-in-out 0.9s infinite;
+}
+
+/* Twinkle: pop up, glint, settle */
+@keyframes sparkle-tl {
+  0%, 100% { transform: rotate(168deg) scale(0.82); opacity: 0.75; }
+  20%      { transform: rotate(176deg) scale(1.15); opacity: 1; }
+  35%      { transform: rotate(164deg) scale(0.95); opacity: 0.9; }
+  50%      { transform: rotate(170deg) scale(1.05); opacity: 1; }
+}
+
+@keyframes sparkle-br {
+  0%, 100% { transform: rotate(12deg) scale(0.82); opacity: 0.75; }
+  20%      { transform: rotate(4deg) scale(1.15); opacity: 1; }
+  35%      { transform: rotate(16deg) scale(0.95); opacity: 0.9; }
+  50%      { transform: rotate(10deg) scale(1.05); opacity: 1; }
+}
+
+/* On hover they hop a little further out */
+.title-wrap:hover .drip-tl { translate: -6px -6px; }
+.title-wrap:hover .drip-br { translate: 6px 6px; }
+
+/* ---------- Mug drawing under the title (same mug as the O's) ---------- */
+.hero-drawing {
+  display: block;
+  width: min(260px, 55vw);
+  height: auto;
+  margin: 110px auto 28px;
+  transform-origin: 50% 50%;
+  animation: cups-sway 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes cups-sway {
+  from { transform: rotate(-3deg); }
+  to   { transform: rotate(3deg); }
+}
+
+.scroll-hint {
+  text-align: center;
+  font-weight: 800;
+  color: #402718;
+  margin: 0 0 18vh;
+}
+
+.scroll-hint span {
+  display: inline-block;
+  animation: hint-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes hint-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* ---------- Summary ---------- */
+.summary {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  color: #402718;
+}
+
+.summary-intro {
+  max-width: 720px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.summary-intro h2 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  font-stretch: 90%;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.summary-intro p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 80px;
+}
+
+.summary-stats div {
+  background: #402718;
+  color: #f2e6b3;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.summary-stats .big {
+  display: block;
+  font-size: 52px;
+  font-weight: 900;
+  font-stretch: 90%;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #402718;
+  border-radius: 16px;
+  padding: 24px;
+  color: #402718;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.summary-card:hover {
+  background: #402718;
+  color: #f2e6b3;
+  transform: translateY(-4px);
+}
+
+.card-kicker {
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.summary-card h3 {
+  font-size: 30px;
+  font-weight: 900;
+  font-stretch: 90%;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 8px 0 12px;
+}
+
+.summary-card p {
+  font-size: 17px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.card-more {
+  font-weight: 800;
+}
+
+/* Fade/slide in when scrolled into view */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.summary-cards .reveal:nth-child(2) { transition-delay: 0.12s; }
+.summary-cards .reveal:nth-child(3) { transition-delay: 0.24s; }
+
+/* Keep the hover lift once a card has faded in */
+.summary-card.reveal.is-visible:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- Nav on small screens (wraps into two rows) ---------- */
+@media (max-width: 760px) {
+  html nav {
+    flex-wrap: wrap;
+  }
+
+  html nav a {
+    flex: 1 1 40%;
+    font-size: 17px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 150px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-drawing,
+  .scroll-hint span {
+    animation: none;
+  }
+
+  .title-wrap .drip {
+    animation: none;
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Immersive home: every section fills the screen
+   ============================================================ */
+.panel {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.panel .summary-intro,
+.panel .summary-stats {
+  margin-bottom: 40px;
+}
+
+/* ---------- Coffee story: the screen is a cup ---------- */
+.timer-story {
+  --level: 0.3;          /* how full the "cup" is (set by fun.js) */
+  position: relative;
+  height: 560vh;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.timer-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #f2e6b3;
+  color: #402718;
+}
+
+.story-top {
+  position: absolute;
+  top: 22px;
+  left: clamp(16px, 4vw, 48px);
+  right: clamp(16px, 4vw, 48px);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 3;
+  transition: color 0.4s ease;
+}
+
+.story-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c8553d;
+  animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 85, 61, 0.6); }
+  50%      { box-shadow: 0 0 0 7px rgba(200, 85, 61, 0); }
+}
+
+#coffee-elapsed {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Big captions in the top half */
+.story-steps {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  translate: -50% 0;
+  width: min(92%, 900px);
+  display: grid;
+  z-index: 3;
+}
+
+.story-step {
+  grid-area: 1 / 1;
+  margin: 0;
+  text-align: center;
+  font-size: clamp(26px, 4.4vw, 54px) !important;
+  font-weight: 900;
+  font-stretch: 90%;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(30px) rotate(-1deg);
+  transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), color 0.4s ease;
+}
+
+.story-step.is-active {
+  opacity: 1;
+  transform: none;
+}
+
+.story-step strong {
+  color: #b5651d;
+}
+
+.story-num {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  margin-bottom: 14px;
+  opacity: 0.7;
+}
+
+/* The coffee rising up from the bottom */
+.story-coffee {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--level) * 100%);
+  background: #402718;
+  z-index: 1;
+  transition: height 0.25s ease-out;
+}
+
+.story-wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  bottom: calc(100% - 1px);
+  background-repeat: repeat-x;
+  background-size: 400px 70px;
+}
+
+.story-wave--back {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='70' viewBox='0 0 400 70' preserveAspectRatio='none'%3E%3Cpath fill='%235c3a22' d='M0 38Q50 14 100 38T200 38T300 38T400 38V70H0Z'/%3E%3C/svg%3E");
+  animation: story-wave 4s linear infinite reverse;
+}
+
+.story-wave--front {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='70' viewBox='0 0 400 70' preserveAspectRatio='none'%3E%3Cpath fill='%23b07a4a' d='M0 44Q50 24 100 44T200 44T300 44T400 44V70H0Z'/%3E%3Cpath fill='%23402718' d='M0 48Q50 28 100 48T200 48T300 48T400 48V70H0Z'/%3E%3C/svg%3E");
+  animation: story-wave 2.6s linear infinite;
+}
+
+@keyframes story-wave {
+  from { background-position: 0 0; }
+  to   { background-position: 400px 0; }
+}
+
+/* Your coffee-bean drawings bobbing on the surface */
+.story-bean {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  width: clamp(30px, 4vw, 52px);
+  height: auto;
+  animation: bean-bob 2.4s ease-in-out infinite alternate;
+}
+
+.story-bean:nth-of-type(1) { left: 14%; --r: -20deg; }
+.story-bean:nth-of-type(2) { left: 52%; --r: 25deg;  animation-delay: -0.8s; }
+.story-bean:nth-of-type(3) { left: 82%; --r: -40deg; animation-delay: -1.6s; }
+
+@keyframes bean-bob {
+  from { transform: translateY(4px) rotate(var(--r)); }
+  to   { transform: translateY(-10px) rotate(calc(var(--r) + 18deg)); }
+}
+
+/* The live counter sits in the coffee */
+.story-counter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  text-align: center;
+  color: #f2e6b3;
+}
+
+.story-counter-label {
+  font-weight: 800;
+  font-size: clamp(14px, 1.6vw, 18px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+.story-counter-num {
+  font-size: clamp(54px, 11vw, 140px);
+  font-weight: 900;
+  font-stretch: 90%;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: #ffd9a0;
+}
+
+.story-counter-num small {
+  font-size: 0.4em;
+}
+
+.story-source {
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.story-dots {
+  position: absolute;
+  right: clamp(14px, 3vw, 36px);
+  top: 50%;
+  translate: 0 -50%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 3;
+}
+
+.story-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.story-dots span.is-active {
+  background: currentColor;
+  transform: scale(1.2);
+}
+
+/* When the cup is full, the text switches to cream */
+.timer-stage.is-full .story-top,
+.timer-stage.is-full .story-step,
+.timer-stage.is-full .story-dots {
+  color: #f2e6b3;
+}
+
+.timer-stage.is-full .story-step strong {
+  color: #ffd9a0;
+}
+
+/* ---------- Three full-screen chapters ---------- */
+.chapter {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 70px);
+  align-items: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+  color: #402718;
+  text-decoration: none;
+}
+
+.chapter.is-flipped .chapter-img {
+  order: 2;
+}
+
+.chapter-img {
+  margin: 0;
+}
+
+.chapter-img img {
+  display: block;
+  width: 100%;
+  height: min(62svh, 520px);
+  object-fit: cover;
+  border: 6px solid #402718;
+  border-radius: 18px;
+  box-shadow: 14px 14px 0 #402718;
+  transform: rotate(-2deg);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.chapter.is-flipped .chapter-img img {
+  transform: rotate(2deg);
+  box-shadow: -14px 14px 0 #402718;
+}
+
+.chapter:hover .chapter-img img {
+  transform: rotate(0) scale(1.02);
+}
+
+.chapter-num {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: #402718;
+  color: #f2e6b3;
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.chapter-text h3 {
+  font-size: clamp(44px, 7vw, 92px);
+  font-weight: 900;
+  font-stretch: 90%;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: 16px 0 18px;
+  -webkit-text-stroke: 0.02em currentColor;
+}
+
+.chapter-text p {
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.55;
+  margin: 0 0 22px;
+}
+
+.chapter-more {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 18px;
+  border-bottom: 3px solid #402718;
+  padding-bottom: 2px;
+  transition: letter-spacing 0.3s ease;
+}
+
+.chapter:hover .chapter-more {
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .chapter {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 70px 0;
+  }
+
+  .chapter.is-flipped .chapter-img {
+    order: 0;
+  }
+
+  .chapter-img img {
+    height: 40svh;
+  }
+
+  .story-dots {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot,
+  .story-wave,
+  .story-bean {
+    animation: none;
+  }
+
+  .story-step,
+  .story-coffee {
+    transition: none;
+  }
+}
+
+/* ---------- Chapter fixes: titles sized to their column ---------- */
+.chapter-text {
+  container-type: inline-size;
+  min-width: 0;
+}
+
+/* Sized from the text column, so the longest word ("STATISTICS")
+   always fits next to the picture, and every chapter matches */
+.chapter-text h3 {
+  font-size: min(92px, 16cqw);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Chapter pictures: 3D tilt, glare and caption ---------- */
+.chapter-img {
+  --rx: 0deg;
+  --ry: 0deg;
+  --gx: 50%;
+  --gy: 50%;
+  position: relative;
+  perspective: 900px;
+}
+
+.chapter-img img {
+  transform: rotate(-2deg) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.25s ease-out;
+}
+
+.chapter.is-flipped .chapter-img img {
+  transform: rotate(2deg) rotateX(var(--rx)) rotateY(var(--ry));
+}
+
+.chapter:hover .chapter-img img {
+  transform: rotate(0) rotateX(var(--rx)) rotateY(var(--ry)) scale(1.02);
+}
+
+/* a soft light that follows the mouse */
+.chapter-img::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 14px;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--gx) var(--gy), rgba(255, 244, 214, 0.45), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: soft-light;
+}
+
+.chapter:hover .chapter-img::after {
+  opacity: 1;
+}
+
+.chapter-img figcaption {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  background: rgba(64, 39, 24, 0.92);
+  color: #f2e6b3;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 10px 14px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.chapter:hover .chapter-img figcaption,
+.chapter:focus-visible .chapter-img figcaption {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter-img img {
+    transition: none;
+  }
+}
+
+/* ---------- Home opening: everything fits on the first screen ---------- */
+.home-opening {
+  min-height: calc(100svh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* sizes also scale with the screen height, so short screens still fit */
+.home-opening .hero h1 {
+  font-size: min(10vw, 13vh, 150px);
+}
+
+.home-opening .hero-drawing {
+  width: auto;
+  height: min(150px, 15vh);
+  margin: min(110px, 9vh) auto min(20px, 2vh);
+}
+
+.home-opening .caffeine-meter {
+  margin: 0 auto min(18px, 2vh);
+}
+
+.home-opening .scroll-hint {
+  margin: 0 !important;
+}
+
+.home-opening .bubble-text {
+  font-size: clamp(22px, min(3.4vw, 4.4vh), 42px);
+}
+
+.home-opening .hero {
+  min-height: 0;
+  padding-top: min(30px, 3vh);
+}
+
+/* shorter steam on the opening screen so it clears the title */
+.home-opening .hero-drawing {
+  margin-top: min(100px, 10vh);
+}
+
+.home-opening .cup-steam {
+  top: -46px;
+  height: 50px;
+}
+
+.home-opening .cup-steam:nth-of-type(2) {
+  top: -54px;
+  height: 58px;
+}
+
+/* the gap above the mug belongs to its holder, so the steam (positioned
+   inside the holder) starts right at the mug's rim */
+.home-opening .cup-holder {
+  margin-top: min(100px, 10vh);
+}
+
+.home-opening .cup-holder .hero-drawing {
+  margin-top: 0;
+}
+
+/* More compact home opening so the arrow has room to be big */
+.home-opening .hero h1 {
+  font-size: min(10vw, 11vh, 150px);
+}
+
+.home-opening .hero-drawing {
+  height: min(140px, 13vh);
+}
+
+.home-opening .cup-holder {
+  margin-top: min(90px, 8.5vh);
+}
+
+.home-opening {
+  padding-bottom: 70px;
+  box-sizing: border-box;
+}
+
+@media (max-height: 820px) {
+  .home-opening .hero h1 {
+    font-size: min(10vw, 10vh, 150px);
+  }
+
+  .home-opening .hero-drawing {
+    height: min(120px, 12vh);
+  }
+
+  .home-opening .cup-holder {
+    margin-top: 7.5vh;
+  }
+}
+
+/* ============================================================
+   Home opening: bigger title + bigger cup, "tap the cup" to begin
+   ============================================================ */
+.home-opening .hero h1 {
+  font-size: min(12vw, 15vh, 190px);
+}
+
+.home-opening .hero-drawing {
+  height: min(220px, 24vh);
+}
+
+.home-opening .cup-holder {
+  margin-top: min(90px, 9vh);
+}
+
+@media (max-height: 820px) {
+  .home-opening .hero h1 {
+    font-size: min(11.5vw, 13.5vh, 190px);
+  }
+
+  .home-opening .hero-drawing {
+    height: min(190px, 22vh);
+  }
+
+  .home-opening .cup-holder {
+    margin-top: 8vh;
+  }
+}
+
+/* Scrolling is locked until the caffeine rush (or "skip") */
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
+}
+
+/* The hint under the cup */
+.cup-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  transition: opacity 0.5s ease;
+}
+
+.cup-hint.is-done {
+  opacity: 0.35;
+}
+
+.cup-hint-text {
+  font-size: clamp(22px, min(3vw, 4vh), 38px);
+  font-weight: 900;
+  font-stretch: 92%;
+  color: #402718;
+  white-space: nowrap;
+}
+
+.cup-hint .bub-ch {
+  display: inline-block;
+  opacity: 0;
+  animation:
+    bubble-in 0.7s cubic-bezier(0.34, 1.9, 0.64, 1) forwards,
+    bubble-float 2.4s ease-in-out infinite;
+  animation-delay: calc(0.4s + var(--i) * 40ms), calc(1.8s + var(--i) * 90ms);
+}
+
+.cup-hint .bub-space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+.cup-hint-sub {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 15px;
+  color: #6b4a35;
+}
+
+.cup-skip {
+  margin-top: 4px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b4a35;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.cup-skip:hover,
+.cup-skip:focus-visible {
+  color: #402718;
+  border-bottom-color: #402718;
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cup-hint .bub-ch {
+    animation: none !important;
+    opacity: 1;
+  }
+}
+
+/* ---------- Smoother scrolling (no colour glitches) ---------- */
+html {
+  overflow-x: clip;
+}
+
+/* The coffee slides up with a GPU transform instead of changing height:
+   no lag behind the scroll, so it always lines up with the text colours */
+.story-coffee {
+  top: 0;
+  bottom: auto;
+  height: 100%;
+  transform: translate3d(0, calc((1 - var(--level)) * 100%), 0);
+  transition: none;
+  will-change: transform;
+}
+
+/* extra coffee below, so the bottom edge never shows when it overfills */
+.story-coffee::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px);
+  height: 30%;
+  background: inherit;
+}
+
+/* waves overlap the coffee a little more, so no thin cream line flickers */
+.story-wave {
+  bottom: calc(100% - 3px);
+}
+
+/* Each piece of text turns cream exactly when the coffee reaches it
+   (set per element by fun.js), with a quick fade */
+.timer-stage .story-top,
+.timer-stage .story-dots {
+  transition: color 0.18s linear;
+}
+
+.timer-stage .story-step {
+  transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), color 0.18s linear;
+}
+
+.timer-stage .story-top.is-under {
+  color: #f2e6b3;
+}
+
+/* the cream copy of the captions, cut off at the coffee's surface */
+.story-cream {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  color: #f2e6b3;
+  clip-path: inset(calc((1 - var(--level)) * 100% - 30px) 0 0 0);
+  will-change: clip-path;
+}
+
+.story-cream .story-step strong {
+  color: #ffd9a0;
+}
+
+/* the old all-at-once colour switch is no longer used */
+.timer-stage.is-full .story-step,
+.timer-stage.is-full .story-dots {
+  color: inherit;
+}
+
+.timer-stage {
+  transform: translateZ(0);
+}
+
+.timer-stage .story-step strong {
+  transition: color 0.18s linear;
+}
+
+/* The end panel now only holds the credits link */
+.panel.panel-end {
+  min-height: 0;
+  padding: 50px 0 30px;
+}
+
+/* ---------- One background colour everywhere ----------
+   The full-screen sections let the page's own cream show through instead
+   of painting their own on a separate layer (which some screens render a
+   slightly different shade) */
+.timer-stage {
+  background: transparent;
+  transform: none;
+}
+
+/* ---------- Coffee beans scattered around the title ----------
+   Sizes are in em, so they grow and shrink with the title */
+.title-beans {
+  position: absolute;
+  inset: 0;
+  font-size: min(12vw, 15vh, 190px); /* same as the title */
+  pointer-events: none;
+}
+
+@media (max-height: 820px) {
+  .title-beans { font-size: min(11.5vw, 13.5vh, 190px); }
+}
+
+.hero .title-beans img {
+  position: absolute;
+  z-index: 0;
+  max-width: none;
+  width: var(--s);
+  height: auto;
+  translate: -50% -50%;
+  transform: rotate(var(--r));
+  animation: title-bean-float 4.5s ease-in-out var(--d) infinite alternate;
+}
+
+@keyframes title-bean-float {
+  from { transform: translateY(0) rotate(var(--r)); }
+  to   { transform: translateY(-8px) rotate(calc(var(--r) + 16deg)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-beans img { animation: none; }
+}
+
+/* ---------- A moving border around the title ----------
+   dotted line marching slowly around, with a caramel streak racing past */
+.title-border {
+  position: absolute;
+  inset: -0.1em -0.15em;
+  width: calc(100% + 0.3em);
+  height: calc(100% + 0.2em);
+  font-size: min(12vw, 15vh, 190px);
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-height: 820px) {
+  .title-border { font-size: min(11.5vw, 13.5vh, 190px); }
+}
+
+.title-border rect {
+  x: 4px;
+  y: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  fill: none;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.title-border .tb-dots {
+  stroke: #402718;
+  stroke-width: 5;
+  stroke-dasharray: 0.01 1.2;
+  animation: tb-march 14s linear infinite;
+}
+
+.title-border .tb-streak {
+  stroke: #b5651d;
+  stroke-width: 7;
+  stroke-dasharray: 9 91;
+  animation: tb-race 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes tb-march {
+  to { stroke-dashoffset: -12; }
+}
+
+@keyframes tb-race {
+  to { stroke-dashoffset: -100; }
+}
+
+.title-wrap h1 {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-border rect { animation: none; }
+}
+
+/* ---------- Full-width banner behind the title ----------
+   a solid band from edge to edge, with marching dotted edges and a
+   caramel streak racing along the top (left to right) and bottom (back) */
+.title-banner {
+  position: absolute;
+  top: -0.12em;
+  bottom: -0.12em;
+  left: 50%;
+  width: 100vw;
+  translate: -50% 0;
+  font-size: min(12vw, 15vh, 190px);
+  background: #e8d496;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-height: 820px) {
+  .title-banner { font-size: min(11.5vw, 13.5vh, 190px); }
+}
+
+.tb-edge {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  overflow: visible;
+}
+
+.tb-edge--top    { top: -7px; }
+.tb-edge--bottom { bottom: -7px; }
+
+.tb-edge line {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.tb-dots {
+  stroke: #402718;
+  stroke-width: 6;
+  stroke-dasharray: 0.1 20;
+  animation: tb-dots-march 1.6s linear infinite;
+}
+
+.tb-edge--bottom .tb-dots {
+  animation-direction: reverse;
+}
+
+.tb-streak {
+  stroke: #b5651d;
+  stroke-width: 8;
+  stroke-dasharray: 12 88;
+  animation: tb-streak-race 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.tb-edge--bottom .tb-streak {
+  animation-direction: reverse;
+  animation-delay: -2.25s;
+}
+
+@keyframes tb-dots-march {
+  to { stroke-dashoffset: -20.1; }
+}
+
+@keyframes tb-streak-race {
+  from { stroke-dashoffset: 12; }
+  to   { stroke-dashoffset: -100; }
+}
+
+/* the old rounded border is replaced by the banner */
+.title-border { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tb-edge line { animation: none; }
+}
+
+/* ---------- Banner: no animated edges, filled with faint icons ---------- */
+.tb-edge { display: none; }
+
+.tb-icons {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.title-banner .tb-icons img {
+  position: absolute;
+  height: auto;
+  max-width: none;
+  translate: -50% -50%;
+  transform: rotate(var(--r));
+  opacity: 0.16;
+}
+
+@media (max-width: 700px) {
+  .title-banner .tb-icons img:nth-child(even) { display: none; }
+}
+
+/* ---------- Title shadow (replaces the banner) ---------- */
+.title-banner { display: none; }
+
+.home-opening .hero h1 {
+  filter: drop-shadow(0.06em 0.06em 0 #e8d496);
+}
+
+
+/* ---------- Caffeine meter: centred under the cup, bigger word ---------- */
+html body .caffeine-meter {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+html body .caffeine-label {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 900;
+  letter-spacing: 0.08em !important;
+}
+
+html body .caffeine-bar { gap: 5px; padding: 5px; border-width: 3px; }
+html body .caffeine-seg { width: 26px; height: 16px; }
