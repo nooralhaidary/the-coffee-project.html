@@ -1,0 +1,59 @@
+/* ============================================================
+   Mobile fit: keep every page centred and exactly screen-wide
+   (loaded last on every page)
+   ============================================================ */
+
+/* Stop anything that pokes past the screen edge (like the floating
+   beans around the title) from making the whole page slide sideways
+   or zoom out on phones. "hidden" is the fallback for older iPhones
+   that don't understand "clip". */
+html {
+  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Photos and media never wider than the screen */
+img,
+video,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  /* Content column: even gutters on both sides */
+  .page,
+  main {
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  /* Wide tables scroll inside their own box instead of the page */
+  .table-wrap {
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Long words / links wrap instead of pushing the page wider */
+  h1, h2, h3, p, li, a, figcaption, td, th {
+    overflow-wrap: break-word;
+  }
+}
+
+/* Homepage: the beans floating around the big title stay inside the
+   screen instead of making the page wider than the phone */
+.home-opening {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  overflow: clip;
+}
