@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee Project</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/icons/favicon-192.png">
+<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Londrina+Solid:wght@300;400;900&family=DM+Mono:wght@400;500&family=Pacifico&family=Orbitron:wght@700;900&display=swap">
+<link rel="stylesheet" href="transition.css">
+<link rel="stylesheet" href="fun.css">
+<link rel="stylesheet" href="home.css">
+<script src="transition.js" defer></script>
+<script src="fun.js" defer></script>
+<script>
+  if (sessionStorage.getItem("coffeeTransition") === "yes") {
+    document.documentElement.classList.add("coffee-entering");
+  }
+</script>
+
+<style>
+  html.coffee-entering {
+    background: #402718;
+  }
+
+  html.coffee-entering body {
+    visibility: hidden;
+  }
+</style>
+</head>
+ <nav>
+
+  <a href="individual.html">
+    The Coffee Project
+  </a>
+
+  <a href="coffee history.html">
+    The History
+  </a>
+
+  <a href="global statistics.html">
+    The Global Statistics
+  </a>
+
+  <a href="the roasters.html">
+    The Roasters
+  </a>
+
+  <a href="sources.html">
+    Sources
+  </a>
+</nav>
+<body>
+
+<div class="home-opening">
+<div class="hero">
+  <div class="title-wrap">
+    <h1 aria-label="The Coffee Project">
+      <span class="word">THE</span> <span class="word">C<span class="drawing-o" aria-hidden="true"></span>FFEE</span>
+      <span class="word">PR<span class="drawing-o" aria-hidden="true"></span>JECT</span>
+    </h1>
+    <div class="title-beans" aria-hidden="true">
+      <img src="images/bean-2.png" alt="" style="left:-24%;top:62%;--s:0.22em;--r:15deg;--d:-0.9s">
+      <img src="images/bean-1.png" alt="" style="left:-14%;top:90%;--s:0.26em;--r:-35deg;--d:-2s">
+      <img src="images/bean-3.png" alt="" style="left:124%;top:68%;--s:0.24em;--r:50deg;--d:-1.3s">
+      <img src="images/bean-2.png" alt="" style="left:113%;top:6%;--s:0.22em;--r:-20deg;--d:-0.5s">
+      <img src="images/bean-3.png" alt="" style="left:-15%;top:6%;--s:0.24em;--r:80deg;--d:-2.4s">
+      <img src="images/bean-1.png" alt="" style="left:-7%;top:14%;--s:0.42em;--r:-30deg;--d:0s">
+      <img src="images/bean-3.png" alt="" style="left:-11%;top:44%;--s:0.3em;--r:40deg;--d:-1.4s">
+      <img src="images/bean-2.png" alt="" style="left:-4%;top:80%;--s:0.36em;--r:-65deg;--d:-2.2s">
+      <img src="images/bean-2.png" alt="" style="left:-17%;top:24%;--s:0.24em;--r:20deg;--d:-0.7s">
+      <img src="images/bean-1.png" alt="" style="left:117%;top:30%;--s:0.28em;--r:-15deg;--d:-1.9s">
+      <img src="images/bean-3.png" alt="" style="left:103%;top:16%;--s:0.4em;--r:55deg;--d:-0.4s">
+      <img src="images/bean-1.png" alt="" style="left:106%;top:50%;--s:0.28em;--r:-45deg;--d:-2.6s">
+      <img src="images/bean-2.png" alt="" style="left:104%;top:84%;--s:0.36em;--r:30deg;--d:-1.1s">
+    </div>
+  </div>
+</div>
+
+<img class="hero-drawing" src="images/mug-rotated.png" alt="Hand-drawn coffee mug, the same one used for the O's in the titles">
+
+</div>
+
+<main class="summary">
+  <div class="panel panel-intro">
+  <section class="summary-intro reveal">
+    <h2>What is The Coffee Project?</h2>
+    <p>The Coffee Project follows coffee from a wild plant in the highlands of Ethiopia to one of the most popular drinks in the world. Find out where it came from, how much of it the world drinks today, and the cafés and companies that made it famous.</p>
+    <p>Every fact on the site is backed by a source, listed at the bottom of each page.</p>
+  </section>
+
+  <section class="summary-stats reveal" aria-label="Coffee in numbers">
+    <div><span class="big">177M</span><span>60 kg bags of coffee drunk worldwide in 2023/24</span></div>
+    <div><span class="big">~60%</span><span>of the world's coffee is Arabica</span></div>
+    <div><span class="big">12 kg</span><span>of coffee per person a year in Finland, the world's biggest coffee drinker</span></div>
+  </section>
+  </div>
+
+  <!-- Full-screen coffee story: the screen is a cup that fills up as you
+       scroll, telling the story one step at a time -->
+  <section class="timer-story" aria-label="The story of coffee in numbers">
+    <div class="timer-stage">
+      <div class="story-top">
+        <span class="story-live"><span class="live-dot" aria-hidden="true"></span>Live</span>
+        <span class="story-clock">Time on page <span id="coffee-elapsed">00:00:00.0</span></span>
+      </div>
+
+      <div class="story-steps">
+        <p class="story-step is-active"><span class="story-num">01 / 05</span>Every second, the world drinks about <strong><span id="coffee-rate">337</span> kg</strong> of coffee.</p>
+        <p class="story-step"><span class="story-num">02 / 05</span>Over a year that adds up to about <strong>177 million 60 kg bags</strong>: more than 10 million tonnes.</p>
+        <p class="story-step"><span class="story-num">03 / 05</span><strong>Europe</strong> drinks the most, about 30% of it. In <strong>Finland</strong>, each person gets through about 12 kg a year.</p>
+        <p class="story-step"><span class="story-num">04 / 05</span>And it all began with a wild plant in the highlands of <strong>Ethiopia</strong>&hellip;</p>
+        <p class="story-step"><span class="story-num">05 / 05</span>Open the menu at the top to start exploring. <span aria-hidden="true">↑</span></p>
+      </div>
+
+      <!-- the coffee itself -->
+      <div class="story-coffee" aria-hidden="true">
+        <div class="story-wave story-wave--back"></div>
+        <div class="story-wave story-wave--front"></div>
+        <img class="story-bean" src="images/bean-1.png" alt="">
+        <img class="story-bean" src="images/bean-2.png" alt="">
+        <img class="story-bean" src="images/bean-3.png" alt="">
+      </div>
+
+      <div class="story-counter">
+        <span class="story-counter-label">Coffee the world has drunk since you arrived</span>
+        <span class="story-counter-num"><span id="coffee-counter" data-plain>0</span><small> kg</small></span>
+        <span class="story-source">Based on 177 million 60 kg bags a year (International Coffee Organization, 2023/24)</span>
+      </div>
+
+      <div class="story-dots" aria-hidden="true">
+        <span class="is-active"></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="panel panel-end">
+  <p class="home-credits"><a href="sources.html">Sources &amp; image credits →</a></p>
+  </div>
+</main>
+
+<script>
+  // Fade sections in as they scroll into view
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    items.forEach((el) => io.observe(el));
+  })();
+</script>
+
+</body>
+
+
+</html>
+
+<style>
+
+.word {
+  white-space: nowrap;
+}
+
+.drawing-o {
+  display: inline-block;
+  width: 0.62em;
+  height: 1em;
+  background-image: url("title-o.png");
+  background-repeat: no-repeat;
+  background-size: auto 166%;
+  background-position: center 44%;
+  vertical-align: -0.08em;
+}
+
+  @font-face {
+  font-family: "Ombre Nouveau";
+  src: url("./ombre_nouveau/OmbreNouveauDEMO-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+  body {
+    background-color: rgb(242, 230, 179);
+    font-family: "Archivo", sans-serif;
+  }
+
+  .hero {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 350px;
+  }
+
+  .hero img {
+    position: absolute;
+    width: 300px;
+    max-width: 100%;
+    z-index: 0;
+  }
+
+  .hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(56px, 10vw, 150px);
+    font-weight: 900;
+    font-stretch: 90%;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    color: #402718;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
+    
+  }
+nav {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+  position: static;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  background-color: #402718;
+  color: #f2e6b3;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 90%;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #70452e;
+}
+
+nav a:active {
+  transform: scale(1.08);
+}
+</style>
